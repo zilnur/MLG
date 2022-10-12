@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17115AF228F7058300B061EC /* MafiaPlayerRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AF128F7058300B061EC /* MafiaPlayerRole.swift */; };
+		17115AF428F7059700B061EC /* MafiaPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AF328F7059700B061EC /* MafiaPlayerProtocol.swift */; };
+		17115AF628F705B800B061EC /* MafiaGameSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AF528F705B800B061EC /* MafiaGameSettingsProtocol.swift */; };
+		17115AF828F705DB00B061EC /* MafiaGameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AF728F705DB00B061EC /* MafiaGameProtocol.swift */; };
+		17115AFA28F7063F00B061EC /* OfflineMafiaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AF928F7063F00B061EC /* OfflineMafiaPlayer.swift */; };
+		17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFB28F7065900B061EC /* OfflineMafiaGameSettings.swift */; };
+		17115AFE28F7066A00B061EC /* OfflineMafiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */; };
+		17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */; };
 		A571B98E28F6DED300C08CB1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B98D28F6DED300C08CB1 /* Tests_iOS.swift */; };
 		A571B99028F6DED300C08CB1 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B98F28F6DED300C08CB1 /* Tests_iOSLaunchTests.swift */; };
 		A571B99A28F6DED300C08CB1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B99928F6DED300C08CB1 /* Tests_macOS.swift */; };
@@ -37,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17115AF128F7058300B061EC /* MafiaPlayerRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MafiaPlayerRole.swift; sourceTree = "<group>"; };
+		17115AF328F7059700B061EC /* MafiaPlayerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MafiaPlayerProtocol.swift; sourceTree = "<group>"; };
+		17115AF528F705B800B061EC /* MafiaGameSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MafiaGameSettingsProtocol.swift; sourceTree = "<group>"; };
+		17115AF728F705DB00B061EC /* MafiaGameProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MafiaGameProtocol.swift; sourceTree = "<group>"; };
+		17115AF928F7063F00B061EC /* OfflineMafiaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaPlayer.swift; sourceTree = "<group>"; };
+		17115AFB28F7065900B061EC /* OfflineMafiaGameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGameSettings.swift; sourceTree = "<group>"; };
+		17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGame.swift; sourceTree = "<group>"; };
+		17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaPlayersProvider.swift; sourceTree = "<group>"; };
 		A571B97528F6DED200C08CB1 /* ML_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_GameApp.swift; sourceTree = "<group>"; };
 		A571B97628F6DED200C08CB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A571B97728F6DED300C08CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +99,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17115AEE28F7050800B061EC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				17115AF028F7051D00B061EC /* MafiaGame */,
+				17115AEF28F7051100B061EC /* OfflineMafiaGame */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		17115AEF28F7051100B061EC /* OfflineMafiaGame */ = {
+			isa = PBXGroup;
+			children = (
+				17115AF928F7063F00B061EC /* OfflineMafiaPlayer.swift */,
+				17115AFB28F7065900B061EC /* OfflineMafiaGameSettings.swift */,
+				17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */,
+				17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */,
+			);
+			path = OfflineMafiaGame;
+			sourceTree = "<group>";
+		};
+		17115AF028F7051D00B061EC /* MafiaGame */ = {
+			isa = PBXGroup;
+			children = (
+				17115AF128F7058300B061EC /* MafiaPlayerRole.swift */,
+				17115AF328F7059700B061EC /* MafiaPlayerProtocol.swift */,
+				17115AF528F705B800B061EC /* MafiaGameSettingsProtocol.swift */,
+				17115AF728F705DB00B061EC /* MafiaGameProtocol.swift */,
+			);
+			path = MafiaGame;
+			sourceTree = "<group>";
+		};
 		A571B96F28F6DED200C08CB1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +144,7 @@
 		A571B97428F6DED200C08CB1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				17115AEE28F7050800B061EC /* Core */,
 				A571B97528F6DED200C08CB1 /* ML_GameApp.swift */,
 				A571B97628F6DED200C08CB1 /* ContentView.swift */,
 				A571B97728F6DED300C08CB1 /* Assets.xcassets */,
@@ -299,8 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */,
 				A571B99F28F6DED300C08CB1 /* ContentView.swift in Sources */,
+				17115AF428F7059700B061EC /* MafiaPlayerProtocol.swift in Sources */,
+				17115AF828F705DB00B061EC /* MafiaGameProtocol.swift in Sources */,
+				17115AF628F705B800B061EC /* MafiaGameSettingsProtocol.swift in Sources */,
+				17115AFA28F7063F00B061EC /* OfflineMafiaPlayer.swift in Sources */,
+				17115AFE28F7066A00B061EC /* OfflineMafiaGame.swift in Sources */,
+				17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */,
 				A571B99D28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
+				17115AF228F7058300B061EC /* MafiaPlayerRole.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ML72UHPY4M;
+				DEVELOPMENT_TEAM = 3J23SKG226;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -471,13 +527,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kzn.ML-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dleuhin.kzn.ML-Game";
 				PRODUCT_NAME = "ML-Game";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -493,7 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ML72UHPY4M;
+				DEVELOPMENT_TEAM = 3J23SKG226;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -501,7 +557,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
