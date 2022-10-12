@@ -1,0 +1,14 @@
+/* 
+  Localization.strings
+  ML-Game
+
+  Created by Dmitry Leukhin on 12.10.2022.
+  
+*/
+
+// MARK: - Application Strings
+"Application.name" = "Мафия";
+
+// MARK: - CreateOfflineSessionScreen Strings
+"CreateOfflineSessionScreen.description" = "Начните игру прямо сейчас";
+"CreateOfflineSessionScreen.button.title" = "Начать игру";
