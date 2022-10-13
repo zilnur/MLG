@@ -13,6 +13,13 @@ enum Design {
     enum Colors {
         static let primary: Color = Color.black
         static let secondary: Color = Color.white
+        
+        @available(*, deprecated, message: "Не используйте этот цвет в проекте")
+        static let tech1: Color = Color(white: 0.95)
+        @available(*, deprecated, message: "Не используйте этот цвета в проекте")
+        static let tech2: Color = Color(white: 0.80)
+        @available(*, deprecated, message: "Не используйте этот цвета в проекте")
+        static let tech3: Color = Color(white: 0.70)
     }
 
     /// Шрифты с размерами
@@ -27,6 +34,7 @@ enum Design {
     /// Отступы
     enum Spacing {
         static let long: CGFloat = 128
+        static let big: CGFloat = 32
         static let standart: CGFloat = 16
         static let short: CGFloat = 8
     }

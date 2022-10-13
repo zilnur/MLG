@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// Расширение, посзволяющее вытащить текст из Localizable.strings
+/// `Application.name.localized` - вернет `Мафия`
 extension String {
     var localized: String {
         return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
