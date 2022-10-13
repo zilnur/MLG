@@ -16,7 +16,8 @@ struct CreateOfflineSessionScreen: View {
             VStack(spacing: Design.Spacing.big) {
                 MLGTitleSubtitle(
                     title: Localization.title,
-                    subtitle: Localization.subTitle
+                    subtitle: Localization.subTitle,
+                    fontTitle: Design.Fonts.h0
                 )
                 MLGNavigationLink {
                     // TODO: - Переход на следующий экран

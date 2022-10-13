@@ -27,7 +27,7 @@ struct MLGTitleSubtitle: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: Design.Spacing.short) {
             Text(title)
                 .font(fontTitle)
                 .fontWeight(Font.Weight.bold)
@@ -35,5 +35,13 @@ struct MLGTitleSubtitle: View {
                 .font(fontSubtitle)
         }
         .padding(Design.Spacing.standart)
+    }
+}
+
+struct CreateOfflineSessionScren_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CreateOfflineSessionScreen()
+        }
     }
 }

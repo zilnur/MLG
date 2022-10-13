@@ -9,8 +9,7 @@ import SwiftUI
 
 struct OfflineMafiaGameSettingsScreen: View {
     @State var isOnToggle = false
-    @State var mafiaPlayers: OfflineMafiaGameSettings = OfflineMafiaGameSettings(playersCount: 0, mafiasCount: 0)
-    @Environment(\.colorScheme) var colorScheme
+    @StateObject var gameSettings = OfflineMafiaGameSettings()
     
     var body: some View {
         VStack(spacing: Design.Spacing.big) {
@@ -27,28 +26,29 @@ struct OfflineMafiaGameSettingsScreen: View {
                 VStack(spacing: Design.Spacing.standart) {
                     ZStack {
                         Stepper(Localization.playerCountTitle,
-                                value: $mafiaPlayers.playersCount,
+                                value: $gameSettings.playersCount,
                                 in: 0...10)
-                        Text("\(mafiaPlayers.playersCount)")
+                        Text("\(gameSettings.playersCount)")
                     }
                     ZStack {
                         Stepper(Localization.mafiaCountTitle,
-                                value: $mafiaPlayers.mafiasCount,
+                                value: $gameSettings.mafiasCount,
                                 in: 0...2)
-                        Text("\(mafiaPlayers.mafiasCount)")
+                        Text("\(gameSettings.mafiasCount)")
                     }
                 }
                 VStack {
                     MLGNavigationLink {
                         // TODO: - Переход на следующий экран
                         OfflinePlayerNameInputScreen()
+                            .environmentObject(gameSettings)
                     } label: {
                         Text(Localization.buttonTitle)
                     }
                 }
             }
         }
-        .padding(.horizontal, 39.0)
+        .padding(Design.Spacing.standart)
     }
 }
 

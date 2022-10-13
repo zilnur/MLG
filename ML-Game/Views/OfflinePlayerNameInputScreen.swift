@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct OfflinePlayerNameInputScreen: View {
-    @State var players: [OfflineMafiaPlayer] = OfflineMafiaPlayersProvider(settings: OfflineMafiaGameSettings.init(playersCount: 10, mafiasCount: 2)).getPlayers()
+    @EnvironmentObject var gameSettings: OfflineMafiaGameSettings
+    @State var text = ""
     
     var body: some View {
         VStack {
-            MLGTitleSubtitle(title: "Игроки", subtitle: "Задайте имя игрокам")
+            MLGTitleSubtitle(
+                title: "Игроки",
+                subtitle: "Задайте имя игрокам"
+            )
             ScrollView {
                 VStack {
-                    ForEach(0..<players.count) { player in
-                        TextField("Игрок \(player + 1)", text: $players[player].name)
+                    ForEach(0..<gameSettings.playersCount) { player in
+                        TextField("Игрок \(player + 1)", text: $text)
                             .padding(Design.Spacing.standart)
                             .frame(maxWidth: .infinity)
                             .background(Design.Colors.lightGray)
@@ -33,11 +37,5 @@ struct OfflinePlayerNameInputScreen: View {
                 Text("Начать игру")
             }
         }
-    }
-}
-
-struct OfflineGameSettingsScreen_Preview: PreviewProvider {
-    static var previews: some View {
-        OfflinePlayerNameInputScreen()
     }
 }
