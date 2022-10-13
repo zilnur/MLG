@@ -9,12 +9,6 @@ import SwiftUI
 
 /// Экран создания сессии
 struct CreateOfflineSessionScreen: View {
-    enum Localization {
-        static let title: String = "Application.name".localized
-        static let subTitle: String = "CreateOfflineSessionScreen.description".localized
-        static let buttonTitle: String = "CreateOfflineSessionScreen.button.title".localized
-    }
-
     @State var isScreenActive: Bool = false
 
     var body: some View {
@@ -26,6 +20,7 @@ struct CreateOfflineSessionScreen: View {
                 )
                 MLGNavigationLink {
                     // TODO: - Переход на следующий экран
+                    OfflineMafiaGameSettingsScreen()
                 } label: {
                     Text(Localization.buttonTitle)
                 }
@@ -55,10 +50,20 @@ struct CreateOfflineSessionScreen: View {
     }
 }
 
+//MARK: - PreviewProvider
 struct CreateOfflineSessionScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CreateOfflineSessionScreen()
         }
+    }
+}
+
+//MARK: - Constant
+extension CreateOfflineSessionScreen {
+    enum Localization {
+        static let title: String = "Application.name".localized
+        static let subTitle: String = "CreateOfflineSessionScreen.description".localized
+        static let buttonTitle: String = "CreateOfflineSessionScreen.button.title".localized
     }
 }

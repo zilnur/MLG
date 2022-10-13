@@ -13,52 +13,38 @@ struct OfflineMafiaGameSettingsScreen: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        VStack(spacing: 70) {
-            VStack(spacing: 90) {
-                VStack(spacing: 7) {
-                    Text("Настройте игру")
-                        .font(.system(size: 20))
-                        .fontWeight(.bold)
-                    
-                    Text("Выберете количество ролей")
-                        .font(.system(size: 16))
-                        .fontWeight(.regular)
-                }
+        VStack(spacing: Design.Spacing.big) {
+            VStack(spacing: Design.Spacing.long) {
+                MLGTitleSubtitle(title: Localization.title, subtitle: Localization.subTitle)
+                
                 Toggle(isOn: $isOnToggle) {
-                    Text("Сбалансировать")
+                    Text(Localization.balanceToggleTitle)
                         .font(.system(size: 16))
                         .fontWeight(.regular)
                 }
             }
-            
-           VStack(spacing: 109) {
-                VStack(spacing: 39) {
+            VStack(spacing: Design.Spacing.long) {
+                VStack(spacing: Design.Spacing.standart) {
                     ZStack {
-                        Stepper("Всего игроков",
+                        Stepper(Localization.playerCountTitle,
                                 value: $mafiaPlayers.playersCount,
                                 in: 0...10)
                         Text("\(mafiaPlayers.playersCount)")
                     }
-                    
                     ZStack {
-                        Stepper("Мафия",
+                        Stepper(Localization.mafiaCountTitle,
                                 value: $mafiaPlayers.mafiasCount,
                                 in: 0...2)
                         Text("\(mafiaPlayers.mafiasCount)")
                     }
-
                 }
-                
                 VStack {
-                    Button {
-                        
+                    MLGNavigationLink {
+                        // TODO: - Переход на следующий экран
+                        OfflinePlayerNameInputScreen()
                     } label: {
-                        Text("Создать")
+                        Text(Localization.buttonTitle)
                     }
-                    .frame(width: 250.0, height: 50.0)
-                    .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
-                    .background(colorScheme == .dark ? Color.white : Color.black)
-                    .clipShape(RoundedRectangle(cornerRadius: 60))
                 }
             }
         }
@@ -66,3 +52,21 @@ struct OfflineMafiaGameSettingsScreen: View {
     }
 }
 
+//MARK: - PreviewProvider
+struct OfflineMafiaGameSettingsScreen_Preview: PreviewProvider {
+    static var previews: some View {
+        OfflineMafiaGameSettingsScreen()
+    }
+}
+
+//MARK: - Constant
+extension OfflineMafiaGameSettingsScreen {
+    enum Localization {
+        static let title: String = "OfflineMafiaGameSettingsScreen.title".localized
+        static let subTitle: String = "OfflineMafiaGameSettingsScreen.subtitle".localized
+        static let balanceToggleTitle: String = "OfflineMafiaGameSettingsScreen.balance".localized
+        static let playerCountTitle: String = "OfflineMafiaGameSettingsScreen.playerCount".localized
+        static let mafiaCountTitle: String = "OfflineMafiaGameSettingsScreen.mafiaCount".localized
+        static let buttonTitle: String = "OfflineMafiaGameSettingsScreen.button.title".localized
+    }
+}
