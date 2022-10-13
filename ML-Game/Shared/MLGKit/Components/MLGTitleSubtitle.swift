@@ -11,20 +11,37 @@ import SwiftUI
 struct MLGTitleSubtitle: View {
     var title: String
     var subtitle: String
+    var fontTitle: Font
+    var fontSubtitle: Font
 
-    init(title: String, subtitle: String) {
+    init(
+        title: String,
+        subtitle: String,
+        fontTitle: Font = Design.Fonts.h2,
+        fontSubtitle: Font = Design.Fonts.h3
+    ) {
         self.title = title
         self.subtitle = subtitle
+        self.fontTitle = fontTitle
+        self.fontSubtitle = fontSubtitle
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: Design.Spacing.short) {
             Text(title)
-                .font(Design.Fonts.h0)
+                .font(fontTitle)
                 .fontWeight(Font.Weight.bold)
             Text(subtitle)
-                .font(Design.Fonts.h3)
+                .font(fontSubtitle)
         }
         .padding(Design.Spacing.standart)
+    }
+}
+
+struct CreateOfflineSessionScren_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CreateOfflineSessionScreen()
+        }
     }
 }

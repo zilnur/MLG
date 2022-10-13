@@ -14,21 +14,21 @@ final class OfflineMafiaPlayersProvider {
     private var mafiasInGame: Int = 0
     private var commissionerInGame: Int = 0
 
-    private var players: [MafiaPlayerProtocol] = []
+    private var players: [OfflineMafiaPlayer] = []
 
     init(settings: MafiaGameSettingsProtocol) {
         playersCount = settings.playersCount
         mafiasCount = settings.mafiasCount
     }
 
-    func getPlayers() -> [MafiaPlayerProtocol] {
+    func getPlayers() -> [OfflineMafiaPlayer] {
         for index in 0..<playersCount {
             players.append(makePlayer(by: index))
         }
         return players
     }
 
-    func makePlayer(by index: Int) -> MafiaPlayerProtocol {
+    func makePlayer(by index: Int) -> OfflineMafiaPlayer {
         OfflineMafiaPlayer(
             id: index,
             role: .civilian,

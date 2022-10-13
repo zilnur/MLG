@@ -47,6 +47,8 @@
 		A571B9A228F6DED300C08CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A571B97728F6DED300C08CB1 /* Assets.xcassets */; };
 		A571B9C128F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */; };
 		A571B9C228F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */; };
+		A571B9C428F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */; };
+		A571B9C528F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,7 @@
 		A571B99928F6DED300C08CB1 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		A571B99B28F6DED300C08CB1 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGameSettingsScreen.swift; sourceTree = "<group>"; };
+		A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePlayerNameInputScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,9 +218,9 @@
 		A571B97428F6DED200C08CB1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				17CCF80A28F807A400C8046A /* Screens */,
 				17E52FE828F7495D000D2FB7 /* MLGFoundation */,
 				17E52FDA28F744B0000D2FB7 /* MLGKit */,
+				17CCF80A28F807A400C8046A /* Screens */,
 				A571B9BF28F719B200C08CB1 /* Views */,
 				17115AEE28F7050800B061EC /* Core */,
 				A571B97528F6DED200C08CB1 /* ML_GameApp.swift */,
@@ -269,6 +272,7 @@
 			children = (
 				A571B97628F6DED200C08CB1 /* ContentView.swift */,
 				A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */,
+				A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */,
 			);
 			name = Views;
 			path = ../Views;
@@ -452,6 +456,7 @@
 				17E52FEA28F7496F000D2FB7 /* String+Resource.swift in Sources */,
 				17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */,
 				17E52FD828F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */,
+				A571B9C428F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */,
 				A571B99D28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
 				17115AF228F7058300B061EC /* MafiaPlayerRole.swift in Sources */,
 			);
@@ -473,6 +478,7 @@
 				A571B99E28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
 				17CCF80628F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
 				17CCF80228F7F69000C8046A /* MLGNavigationView.swift in Sources */,
+				A571B9C528F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +632,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3J23SKG226;
+				DEVELOPMENT_TEAM = ML72UHPY4M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

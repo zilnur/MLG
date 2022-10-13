@@ -13,6 +13,7 @@ enum Design {
     enum Colors {
         static let primary: Color = Color.black
         static let secondary: Color = Color.white
+        static let lightGray: Color = Color(red: 0.87, green: 0.87, blue: 0.87)
         
         @available(*, deprecated, message: "Не используйте этот цвет в проекте")
         static let tech1: Color = Color(white: 0.95)

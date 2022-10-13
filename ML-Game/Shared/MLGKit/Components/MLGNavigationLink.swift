@@ -45,6 +45,7 @@ struct MLGNavigationLink<Label, Destination> : View where Label : View, Destinat
             }
             .buttonStyle(.plain)
             .padding(Design.Spacing.standart)
+            
         }
     }
 }
