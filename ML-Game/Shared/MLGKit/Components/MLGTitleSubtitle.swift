@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Компонент, для отрисовки Заголовка и Подзаголовка
 struct MLGTitleSubtitle: View {
     var title: String
     var subtitle: String
@@ -24,5 +25,6 @@ struct MLGTitleSubtitle: View {
             Text(subtitle)
                 .font(Design.Fonts.h3)
         }
+        .padding(Design.Spacing.standart)
     }
 }

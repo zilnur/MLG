@@ -17,6 +17,12 @@
 		17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */; };
 		17CCF7FE28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF7FD28F7642400C8046A /* MLGTitleSubtitle.swift */; };
 		17CCF7FF28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF7FD28F7642400C8046A /* MLGTitleSubtitle.swift */; };
+		17CCF80128F7F69000C8046A /* MLGNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80028F7F69000C8046A /* MLGNavigationView.swift */; };
+		17CCF80228F7F69000C8046A /* MLGNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80028F7F69000C8046A /* MLGNavigationView.swift */; };
+		17CCF80528F8030700C8046A /* MLGPreviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80428F8030700C8046A /* MLGPreviewComponent.swift */; };
+		17CCF80628F8030700C8046A /* MLGPreviewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80428F8030700C8046A /* MLGPreviewComponent.swift */; };
+		17CCF80828F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */; };
+		17CCF80928F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */; };
 		17E52FD828F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */; };
 		17E52FD928F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */; };
 		17E52FDC28F744C0000D2FB7 /* FullScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FDB28F744C0000D2FB7 /* FullScreen.swift */; };
@@ -70,6 +76,9 @@
 		17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGame.swift; sourceTree = "<group>"; };
 		17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaPlayersProvider.swift; sourceTree = "<group>"; };
 		17CCF7FD28F7642400C8046A /* MLGTitleSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGTitleSubtitle.swift; sourceTree = "<group>"; };
+		17CCF80028F7F69000C8046A /* MLGNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGNavigationView.swift; sourceTree = "<group>"; };
+		17CCF80428F8030700C8046A /* MLGPreviewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGPreviewComponent.swift; sourceTree = "<group>"; };
+		17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGUIKitComponentsScreen.swift; sourceTree = "<group>"; };
 		17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfflineSessionScreen.swift; sourceTree = "<group>"; };
 		17E52FDB28F744C0000D2FB7 /* FullScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreen.swift; sourceTree = "<group>"; };
 		17E52FE228F74835000D2FB7 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
@@ -154,6 +163,15 @@
 			path = MafiaGame;
 			sourceTree = "<group>";
 		};
+		17CCF80A28F807A400C8046A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */,
+				17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		17E52FDA28F744B0000D2FB7 /* MLGKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +187,8 @@
 				17E52FDB28F744C0000D2FB7 /* FullScreen.swift */,
 				17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */,
 				17CCF7FD28F7642400C8046A /* MLGTitleSubtitle.swift */,
+				17CCF80028F7F69000C8046A /* MLGNavigationView.swift */,
+				17CCF80428F8030700C8046A /* MLGPreviewComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -195,6 +215,7 @@
 		A571B97428F6DED200C08CB1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				17CCF80A28F807A400C8046A /* Screens */,
 				17E52FE828F7495D000D2FB7 /* MLGFoundation */,
 				17E52FDA28F744B0000D2FB7 /* MLGKit */,
 				A571B9BF28F719B200C08CB1 /* Views */,
@@ -248,7 +269,6 @@
 			children = (
 				A571B97628F6DED200C08CB1 /* ContentView.swift */,
 				A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */,
-				17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */,
 			);
 			name = Views;
 			path = ../Views;
@@ -418,13 +438,16 @@
 				17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */,
 				A571B99F28F6DED300C08CB1 /* ContentView.swift in Sources */,
 				17E52FDC28F744C0000D2FB7 /* FullScreen.swift in Sources */,
+				17CCF80528F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
 				17115AF428F7059700B061EC /* MafiaPlayerProtocol.swift in Sources */,
 				17E52FE328F74835000D2FB7 /* Design.swift in Sources */,
 				17E52FED28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */,
 				17CCF7FE28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */,
 				17115AF828F705DB00B061EC /* MafiaGameProtocol.swift in Sources */,
 				17115AF628F705B800B061EC /* MafiaGameSettingsProtocol.swift in Sources */,
+				17CCF80828F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */,
 				17115AFA28F7063F00B061EC /* OfflineMafiaPlayer.swift in Sources */,
+				17CCF80128F7F69000C8046A /* MLGNavigationView.swift in Sources */,
 				17115AFE28F7066A00B061EC /* OfflineMafiaGame.swift in Sources */,
 				17E52FEA28F7496F000D2FB7 /* String+Resource.swift in Sources */,
 				17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */,
@@ -441,12 +464,15 @@
 				17E52FDD28F744C0000D2FB7 /* FullScreen.swift in Sources */,
 				A571B9C228F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */,
 				17E52FEB28F7496F000D2FB7 /* String+Resource.swift in Sources */,
+				17CCF80928F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */,
 				17CCF7FF28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */,
 				17E52FD928F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */,
 				17E52FE428F74835000D2FB7 /* Design.swift in Sources */,
 				A571B9A028F6DED300C08CB1 /* ContentView.swift in Sources */,
 				17E52FEE28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */,
 				A571B99E28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
+				17CCF80628F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
+				17CCF80228F7F69000C8046A /* MLGNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,7 +634,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,13 +664,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kzn.ML-Game";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kzn.dleukhin.ML-Game";
 				PRODUCT_NAME = "ML-Game";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
