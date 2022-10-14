@@ -11,6 +11,7 @@ struct OfflinePlayerNameInputScreen: View {
     @EnvironmentObject var gameSettings: OfflineMafiaGameSettings
     @State var text = ""
     
+    
     var body: some View {
         VStack {
             MLGTitleSubtitle(
@@ -36,6 +37,9 @@ struct OfflinePlayerNameInputScreen: View {
             } label: {
                 Text("Начать игру")
             }
+        }
+        .onTapGesture {
+            hideKeyboard()
         }
     }
 }

@@ -43,6 +43,8 @@
 		17E52FEB28F7496F000D2FB7 /* String+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FE928F7496F000D2FB7 /* String+Resource.swift */; };
 		17E52FED28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */; };
 		17E52FEE28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */; };
+		A53107C328F94C2000195B12 /* UIView+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C228F94C2000195B12 /* UIView+Resource.swift */; };
+		A53107C428F94C2000195B12 /* UIView+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C228F94C2000195B12 /* UIView+Resource.swift */; };
 		A571B98E28F6DED300C08CB1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B98D28F6DED300C08CB1 /* Tests_iOS.swift */; };
 		A571B99028F6DED300C08CB1 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B98F28F6DED300C08CB1 /* Tests_iOSLaunchTests.swift */; };
 		A571B99A28F6DED300C08CB1 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B99928F6DED300C08CB1 /* Tests_macOS.swift */; };
@@ -101,6 +103,7 @@
 		17E52FE528F74935000D2FB7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		17E52FE928F7496F000D2FB7 /* String+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Resource.swift"; sourceTree = "<group>"; };
 		17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGNavigationLink.swift; sourceTree = "<group>"; };
+		A53107C228F94C2000195B12 /* UIView+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Resource.swift"; sourceTree = "<group>"; };
 		A571B97528F6DED200C08CB1 /* ML_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_GameApp.swift; sourceTree = "<group>"; };
 		A571B97628F6DED200C08CB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A571B97728F6DED300C08CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +239,7 @@
 			children = (
 				17E52FE928F7496F000D2FB7 /* String+Resource.swift */,
 				17D711FD28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift */,
+				A53107C228F94C2000195B12 /* UIView+Resource.swift */,
 			);
 			path = MLGPlatform;
 			sourceTree = "<group>";
@@ -254,7 +258,6 @@
 		A571B97428F6DED200C08CB1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				17CCF80A28F807A400C8046A /* Screens */,
 				17E52FE828F7495D000D2FB7 /* MLGPlatform */,
 				17E52FDA28F744B0000D2FB7 /* MLGKit */,
 				17CCF80A28F807A400C8046A /* Screens */,
@@ -499,6 +502,7 @@
 				17E52FEA28F7496F000D2FB7 /* String+Resource.swift in Sources */,
 				17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */,
 				17E52FD828F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */,
+				A53107C328F94C2000195B12 /* UIView+Resource.swift in Sources */,
 				A571B9C428F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */,
 				A571B99D28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
 				17115AF228F7058300B061EC /* MafiaPlayerRole.swift in Sources */,
@@ -521,6 +525,7 @@
 				A571B9A028F6DED300C08CB1 /* ContentView.swift in Sources */,
 				17E52FEE28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */,
 				A571B99E28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
+				A53107C428F94C2000195B12 /* UIView+Resource.swift in Sources */,
 				17CCF80628F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
 				17CCF80228F7F69000C8046A /* MLGNavigationView.swift in Sources */,
 				A571B9C528F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */,
