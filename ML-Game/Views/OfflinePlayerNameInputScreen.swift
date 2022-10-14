@@ -23,7 +23,7 @@ struct OfflinePlayerNameInputScreen: View {
                         TextField("Игрок \(player + 1)", text: $text)
                             .padding(Design.Spacing.standart)
                             .frame(maxWidth: .infinity)
-                            .background(Design.Colors.lightGray)
+                            .background(Design.Colors.backgroundLight)
                             .clipShape(Capsule())
                             .foregroundColor(Design.Colors.primary)
                             .multilineTextAlignment(.center)
