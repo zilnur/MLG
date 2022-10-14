@@ -9,23 +9,38 @@ import SwiftUI
 
 /// Экран для демонстрации существующих компонентов
 struct MLGUIKitComponentsScreen: View {
+    @State var value: Double = 0
+
     var body: some View {
         ScrollView(.vertical) {
             VStack {
-                Text("Здесь представлены все разработанные компоненты")
-                    .font(Design.Fonts.h2)
-                    .bold()
-                    .padding(Design.Spacing.standart)
-                    .multilineTextAlignment(.center)
                 components
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            Text("Здесь представлены все компоненты")
+                .font(Design.Fonts.h3)
+                .bold()
+        }
     }
 
+    /// Поле компонентов, в него нужно добавлять новые элементы
     var components: some View {
         VStack {
             MLGPreviewComponent {
-                MLGTitleSubtitle(title: "Заголовок", subtitle: "Подзаголовок")
+                MLGTitleSubtitle(
+                    title: "Заголовок",
+                    subtitle: "Подзаголовок",
+                    fontTitle: Design.Fonts.h0,
+                    fontSubtitle: Design.Fonts.h2
+                )
+            }
+            MLGPreviewComponent {
+                MLGTitleSubtitle(
+                    title: "Заголовок",
+                    subtitle: "Подзаголовок"
+                )
             }
             MLGPreviewComponent {
                 MLGNavigationLink {
@@ -34,7 +49,13 @@ struct MLGUIKitComponentsScreen: View {
                     Text("Текст кнопки")
                 }
             }
-            // <-- Новые компоненты добавлять сюда
+            MLGPreviewComponent {
+                MLGStepper()
+            }
+            MLGPreviewComponent {
+                MLGCellWithStepper()
+            }
+            // <-- Новые компоненты добавлять сюда (коммент не стирать)
         }
     }
 }

@@ -46,7 +46,7 @@ struct CreateOfflineSessionScreen: View {
         Button {
             isScreenActive = true
         } label: {
-            Image(systemName: "gear")
+            Image(systemName: Design.Icons.gear)
         }
     }
 }

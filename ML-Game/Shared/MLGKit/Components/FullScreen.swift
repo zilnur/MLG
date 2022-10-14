@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Компонент, заполняющий весь экран
+// TODO: - Удалить из-за отсутствия необходимости -
 struct FullScreenVStack<Content> : View where Content : View {
     var content: Content
     var alignment: Alignment
