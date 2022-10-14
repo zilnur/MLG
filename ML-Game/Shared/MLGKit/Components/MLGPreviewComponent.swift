@@ -9,6 +9,8 @@ import SwiftUI
 
 /// Компонент для описания элементов, находящихся внутри него
 struct MLGPreviewComponent<Content> : View where Content : View {
+    @Environment(\.colorScheme) var colorScheme
+
     var content: Content
 
     init(@ViewBuilder content: () -> Content) {
@@ -18,15 +20,16 @@ struct MLGPreviewComponent<Content> : View where Content : View {
     var body: some View {
         VStack {
             Text(String(describing: type(of: content)))
-                .foregroundColor(Design.Colors.primary)
+                .backgroundColorTheme(Design.ColorThemes.secondary)
                 .padding(Design.Spacing.standart)
             content
                 .frame(maxWidth: .infinity)
-                .background(Design.Colors.tech2)
+                .backgroundColorTheme(Design.ColorThemes.secondary)
                 .padding(Design.Spacing.standart)
-                
         }
         .frame(maxWidth: .infinity)
-        .background(Design.Colors.tech3)
+        .backgroundColorTheme(Design.ColorThemes.primary)
+        .clipShape(RoundedRectangle(cornerRadius: Design.Spacing.standart))
+        .padding(Design.Spacing.standart)
     }
 }
