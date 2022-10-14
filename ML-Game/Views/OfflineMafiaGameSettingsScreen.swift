@@ -9,8 +9,15 @@ import SwiftUI
 
 struct OfflineMafiaGameSettingsScreen: View {
     @State var isOnToggle = false
-    @StateObject var gameSettings = OfflineMafiaGameSettings()
+    @State var gameSettings = OfflineMafiaGame()
+    @State private var playerCount: Int = 1
+    @State private var mafiaCount: Int = 1
     
+    init() {
+        playerCount = gameSettings.settings.playersCount
+        mafiaCount = gameSettings.settings.mafiasCount
+    }
+
     var body: some View {
         VStack(spacing: Design.Spacing.big) {
             VStack(spacing: Design.Spacing.long) {
@@ -25,26 +32,34 @@ struct OfflineMafiaGameSettingsScreen: View {
             VStack(spacing: Design.Spacing.long) {
                 VStack(spacing: Design.Spacing.standart) {
                     ZStack {
-                        Stepper(Localization.playerCountTitle,
-                                value: $gameSettings.playersCount,
-                                in: 0...10)
-                        Text("\(gameSettings.playersCount)")
+                        Stepper(
+                            Localization.playerCountTitle,
+                            value: $playerCount,
+                            in: 1...10
+                        )
+                        Text("\(playerCount)")
                     }
                     ZStack {
-                        Stepper(Localization.mafiaCountTitle,
-                                value: $gameSettings.mafiasCount,
-                                in: 0...2)
-                        Text("\(gameSettings.mafiasCount)")
+                        Stepper(
+                            Localization.mafiaCountTitle,
+                            value: $mafiaCount,
+                            in: 1...2
+                        )
+                        Text("\(mafiaCount)")
                     }
                 }
                 VStack {
                     MLGNavigationLink {
                         // TODO: - Переход на следующий экран
                         OfflinePlayerNameInputScreen()
-                            .environmentObject(gameSettings)
                     } label: {
                         Text(Localization.buttonTitle)
-                    }
+                    }.simultaneousGesture(TapGesture().onEnded {
+                        gameSettings.settings.playersCount = playerCount
+                        gameSettings.settings.mafiasCount = mafiaCount
+                        gameSettings.saveSettings()
+                        gameSettings.createPlayer()
+                    })
                 }
             }
         }

@@ -21,20 +21,20 @@ final class OfflineMafiaPlayersProvider {
         mafiasCount = settings.mafiasCount
     }
 
-    func getPlayers() -> [OfflineMafiaPlayer] {
-        for index in 0..<playersCount {
-            players.append(makePlayer(by: index))
-        }
-        return players
-    }
+//    func getPlayers() -> [OfflineMafiaPlayer] {
+//        for index in 0..<playersCount {
+//            players.append(makePlayer(by: index))
+//        }
+//        return players
+//    }
 
-    func makePlayer(by index: Int) -> OfflineMafiaPlayer {
-        OfflineMafiaPlayer(
-            id: index,
-            role: .civilian,
-            name: playerName(by: index)
-        )
-    }
+//    func makePlayer(by index: Int) -> OfflineMafiaPlayer {
+//        OfflineMafiaPlayer(
+//            id: index,
+//            role: .civilian,
+//            name: playerName(by: index)
+//        )
+//    }
 
     func playerName(by index: Int) -> String {
         "Игрок \(index)"
