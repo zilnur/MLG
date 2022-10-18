@@ -17,7 +17,7 @@ struct OfflineMafiaCardScreen: View {
                 subtitle: "Ваша роль"
             )
             Spacer()
-            MLGCardView()
+            MLGCardView(role: gameSettings.players[0].role.rawValue)
             Spacer()
             MLGNavigationLink {
                 
