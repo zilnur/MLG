@@ -28,20 +28,10 @@ struct MLGNavigationLink<Label, Destination> : View where Label : View, Destinat
                 label
                     .padding(Design.Spacing.standart)
                     .frame(maxWidth: .infinity)
-                    .foregroundColor(
-                        colorScheme == .dark ?
-                            Design.Colors.primary :
-                            Design.Colors.secondary
-                           
-                    )
-                    .background(
-                        colorScheme == .dark ?
-                            Design.Colors.secondary :
-                            Design.Colors.primary
-                    )
-                    .clipShape(
-                        Capsule()
-                    )
+                    .font(Design.Fonts.h3)
+                    .foregroundColor(Design.Colors.secondary)
+                    .background(Design.Colors.primary)
+                    .clipShape(Capsule())
             }
             .buttonStyle(.plain)
             .padding(Design.Spacing.standart)

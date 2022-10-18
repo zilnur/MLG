@@ -20,15 +20,15 @@ struct MLGPreviewComponent<Content> : View where Content : View {
     var body: some View {
         VStack {
             Text(String(describing: type(of: content)))
-                .backgroundColorTheme(Design.ColorThemes.secondary)
+                .foregroundColor(Design.Colors.secondary)
                 .padding(Design.Spacing.standart)
             content
                 .frame(maxWidth: .infinity)
-                .backgroundColorTheme(Design.ColorThemes.secondary)
+                .background(Design.Colors.secondary)
                 .padding(Design.Spacing.standart)
         }
         .frame(maxWidth: .infinity)
-        .backgroundColorTheme(Design.ColorThemes.primary)
+        .background(Design.Colors.primary)
         .clipShape(RoundedRectangle(cornerRadius: Design.Spacing.standart))
         .padding(Design.Spacing.standart)
     }
