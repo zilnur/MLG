@@ -11,10 +11,11 @@ import SwiftUI
 struct SetupImageSize: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(
-                width: Design.Size.standart,
-                height:  Design.Size.standart
-            )
-            .contentShape(Rectangle())
+            .padding(Design.Size.short)
+//            .frame(
+//                width: Design.Size.standart,
+//                height:  Design.Size.standart
+//            )
+//            .contentShape(Rectangle())
     }
 }

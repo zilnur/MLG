@@ -16,7 +16,7 @@ struct MLGCellWithStepper : View {
 
             HStack(spacing: Design.Spacing.short) {
                 Text("Мафия")
-                    .foregroundColorTheme(Design.ColorThemes.primary)
+                    .foregroundColor(Design.Colors.primary)
                     .font(Design.Fonts.h3)
 
                 Spacer()
@@ -26,7 +26,7 @@ struct MLGCellWithStepper : View {
             .lineLimit(1)
 
             Text("Слишком большое значение")
-                .foregroundColorTheme(Design.ColorThemes.error)
+                .foregroundColor(Design.Colors.error)
                 .font(Design.Fonts.h3)
         }
     }
