@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct OfflinePlayerNameInputScreen: View {
-    @EnvironmentObject var gameSettings: OfflineMafiaGameSettings
     @State var text = ""
-    
+    @ObservedObject var gameSettings = OfflineMafiaGame()
+
+    init() {
+        gameSettings.getDataPlayers()
+    }
     
     var body: some View {
         VStack {
@@ -20,26 +23,29 @@ struct OfflinePlayerNameInputScreen: View {
             )
             ScrollView {
                 VStack {
-                    ForEach(0..<gameSettings.playersCount) { player in
-                        TextField("Игрок \(player + 1)", text: $text)
+                    ForEach(0..<gameSettings.settings.playersCount) { player in
+                        TextField("Игрок \(player + 1)", text: $gameSettings.players[player].name)
                             .padding(Design.Spacing.standart)
                             .frame(maxWidth: .infinity)
                             .background(Design.Colors.background)
                             .clipShape(Capsule())
-                            .foregroundColor(Design.Colors.primary)
+                            .foregroundColor(Color.black)
                             .multilineTextAlignment(.center)
                     }
                 }
                 .padding()
             }
             MLGNavigationLink {
-                
+                OfflineMafiaCadrScreen()
             } label: {
                 Text("Начать игру")
-            }
+            }.simultaneousGesture(TapGesture().onEnded {
+                gameSettings.savePlayers()
+            })
         }
         .onTapGesture {
             hideKeyboard()
         }
     }
+    
 }

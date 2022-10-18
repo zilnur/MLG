@@ -9,8 +9,8 @@ import SwiftUI
 
 struct OfflineMafiaGameSettingsScreen: View {
     @State var isOnToggle = false
-    @StateObject var gameSettings = OfflineMafiaGameSettings()
-    
+    @ObservedObject var gameSettings = OfflineMafiaGame()
+
     var body: some View {
         VStack(spacing: Design.Spacing.big) {
             VStack(spacing: Design.Spacing.long) {
@@ -25,26 +25,32 @@ struct OfflineMafiaGameSettingsScreen: View {
             VStack(spacing: Design.Spacing.long) {
                 VStack(spacing: Design.Spacing.standart) {
                     ZStack {
-                        Stepper(Localization.playerCountTitle,
-                                value: $gameSettings.playersCount,
-                                in: 0...10)
-                        Text("\(gameSettings.playersCount)")
+                        Stepper(
+                            Localization.playerCountTitle,
+                            value: $gameSettings.settings.playersCount,
+                            in: 1...10
+                        )
+                        Text("\(gameSettings.settings.playersCount)")
                     }
                     ZStack {
-                        Stepper(Localization.mafiaCountTitle,
-                                value: $gameSettings.mafiasCount,
-                                in: 0...2)
-                        Text("\(gameSettings.mafiasCount)")
+                        Stepper(
+                            Localization.mafiaCountTitle,
+                            value: $gameSettings.settings.mafiasCount,
+                            in: 1...2
+                        )
+                        Text("\(gameSettings.settings.mafiasCount)")
                     }
                 }
                 VStack {
                     MLGNavigationLink {
                         // TODO: - Переход на следующий экран
                         OfflinePlayerNameInputScreen()
-                            .environmentObject(gameSettings)
                     } label: {
                         Text(Localization.buttonTitle)
-                    }
+                    }.simultaneousGesture(TapGesture().onEnded {
+                        gameSettings.saveSettings()
+                        gameSettings.createPlayer()
+                    })
                 }
             }
         }

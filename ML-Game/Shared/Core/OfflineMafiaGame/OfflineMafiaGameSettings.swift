@@ -7,8 +7,8 @@
 
 import Foundation
 
-class OfflineMafiaGameSettings: MafiaGameSettingsProtocol, ObservableObject {
-    @Published var playersCount: Int = 1
-    @Published var mafiasCount: Int = 1
+class OfflineMafiaGameSettings: Codable {
+    var playersCount: Int = 1
+    var mafiasCount: Int = 1
 }
 

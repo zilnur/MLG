@@ -8,7 +8,7 @@
 import Foundation
 
 /// Перечисление с ролями игроков
-enum MafiaPlayerRole {
+enum MafiaPlayerRole: Codable {
     case mafia
     case civilian
     case commissioner
