@@ -10,7 +10,7 @@ import SwiftUI
 
 class OfflineMafiaGame: ObservableObject {
     @Published var players: [OfflineMafiaPlayer] = []
-    var settings: OfflineMafiaGameSettings = OfflineMafiaGameSettings()
+    @Published var settings: OfflineMafiaGameSettings = OfflineMafiaGameSettings()
     
     let playersSaveKey = "SavedPlayersData"
     let settingsSaveKey = "SavedSettingsData"
@@ -51,7 +51,7 @@ class OfflineMafiaGame: ObservableObject {
     }
     
     func createPlayer() {
-        players = []
+        getDataPlayers()
         for id in 1...settings.playersCount {
             let player = OfflineMafiaPlayer(id: id, role: .civilian)
             players.append(player)

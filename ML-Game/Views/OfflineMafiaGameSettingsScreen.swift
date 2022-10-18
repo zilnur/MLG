@@ -9,14 +9,7 @@ import SwiftUI
 
 struct OfflineMafiaGameSettingsScreen: View {
     @State var isOnToggle = false
-    @State var gameSettings = OfflineMafiaGame()
-    @State private var playerCount: Int = 1
-    @State private var mafiaCount: Int = 1
-    
-    init() {
-        playerCount = gameSettings.settings.playersCount
-        mafiaCount = gameSettings.settings.mafiasCount
-    }
+    @ObservedObject var gameSettings = OfflineMafiaGame()
 
     var body: some View {
         VStack(spacing: Design.Spacing.big) {
@@ -34,18 +27,18 @@ struct OfflineMafiaGameSettingsScreen: View {
                     ZStack {
                         Stepper(
                             Localization.playerCountTitle,
-                            value: $playerCount,
+                            value: $gameSettings.settings.playersCount,
                             in: 1...10
                         )
-                        Text("\(playerCount)")
+                        Text("\(gameSettings.settings.playersCount)")
                     }
                     ZStack {
                         Stepper(
                             Localization.mafiaCountTitle,
-                            value: $mafiaCount,
+                            value: $gameSettings.settings.mafiasCount,
                             in: 1...2
                         )
-                        Text("\(mafiaCount)")
+                        Text("\(gameSettings.settings.mafiasCount)")
                     }
                 }
                 VStack {
@@ -55,8 +48,6 @@ struct OfflineMafiaGameSettingsScreen: View {
                     } label: {
                         Text(Localization.buttonTitle)
                     }.simultaneousGesture(TapGesture().onEnded {
-                        gameSettings.settings.playersCount = playerCount
-                        gameSettings.settings.mafiasCount = mafiaCount
                         gameSettings.saveSettings()
                         gameSettings.createPlayer()
                     })
