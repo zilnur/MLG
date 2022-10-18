@@ -29,18 +29,6 @@ import SwiftUI
 //}
 
 extension View {
-    /// Модификатор для наложения цвета элемента, с зависимостью от темы
-    func foregroundColorTheme(_ colorTheme: Design.ColorTheme) -> some View {
-        modifier(ForegroundColorTheme(colorTheme: colorTheme))
-    }
-    /// Модификатор для наложения цвета фона, с зависимостью от темы
-    func backgroundColorTheme(_ colorTheme: Design.ColorTheme) -> some View {
-        modifier(BackgroundColorTheme(colorTheme: colorTheme))
-    }
-    /// Модификатор для наложения цвета в навигации, с зависимостью от темы
-    func accentColorTheme(_ colorTheme: Design.ColorTheme) -> some View {
-        modifier(AccentColorTheme(colorTheme: colorTheme))
-    }
     /// Модификатор для применения стиля под картинки на кнопках
     func setupImageSize() -> some View {
         modifier(SetupImageSize())

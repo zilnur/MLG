@@ -16,8 +16,8 @@ struct MLGStepper : View {
                 value = value - 1
                 feedback()
             } label: { Image(systemName: Design.Icons.minus) }
-            .foregroundColorTheme(Design.ColorThemes.primary)
-            .setupImageSize()
+            .padding(Design.Size.short)
+            .foregroundColor(Design.Colors.primary)
 
             Divider()
 
@@ -31,12 +31,11 @@ struct MLGStepper : View {
                 value = value + 1
                 feedback()
             } label: { Image(systemName: Design.Icons.plus) }
-            .foregroundColorTheme(Design.ColorThemes.primary)
+            .foregroundColor(Design.Colors.primary)
             .setupImageSize()
         }
-        .frame(height: Design.Size.standart)
         .padding(Design.Spacing.short)
-        .backgroundColorTheme(Design.ColorThemes.background)
+        .background(Design.Colors.background)
         .clipShape(
             RoundedRectangle(
                 cornerRadius: Design.Spacing.short,

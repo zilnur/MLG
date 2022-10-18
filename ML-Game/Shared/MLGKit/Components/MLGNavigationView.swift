@@ -21,6 +21,6 @@ struct MLGNavigationView<Content> : View where Content : View {
         NavigationView {
             content
         }
-        .accentColorTheme(Design.ColorThemes.primary)
+        .accentColor(Design.Colors.primary)
     }
 }
