@@ -9,8 +9,8 @@ import SwiftUI
 
 struct OfflinePlayerNameInputScreen: View {
     @State var text = ""
-    @State var gameSettings = OfflineMafiaGame()
-    
+    @ObservedObject var gameSettings = OfflineMafiaGame()
+
     init() {
         gameSettings.getDataPlayers()
     }
@@ -36,7 +36,7 @@ struct OfflinePlayerNameInputScreen: View {
                 .padding()
             }
             MLGNavigationLink {
-                
+                OfflineMafiaCadrScreen()
             } label: {
                 Text("Начать игру")
             }.simultaneousGesture(TapGesture().onEnded {
