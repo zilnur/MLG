@@ -12,9 +12,7 @@ struct MLGCardView: View {
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
-
-    let width : CGFloat = 262
-    let height : CGFloat = 387
+    
     let durationAndDelay : CGFloat = 0.2
 
     //MARK: Flip Card Function
@@ -39,8 +37,8 @@ struct MLGCardView: View {
     //MARK: View Body
     var body: some View {
         ZStack {
-            CardFront(width: width, height: height, degree: $frontDegree)
-            CardBack(width: width, height: height, degree: $backDegree)
+            CardFront(degree: $frontDegree)
+            CardBack(degree: $backDegree)
         }.onTapGesture {
             flipCard ()
         }
@@ -48,17 +46,17 @@ struct MLGCardView: View {
 }
 
 struct CardFront : View {
-    let width : CGFloat
-    let height : CGFloat
     @Binding var degree : Double
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
-                .frame(width: width, height: height)
+                .frame(maxWidth: .infinity)
+                .aspectRatio(0.65, contentMode: .fit)
                 .shadow(color: .gray, radius: 3, x: 1, y: 1)
-            
+                .padding(Design.Spacing.big)
+
             Text("Мафия")
                 .font(.system(size: 36))
 
@@ -67,17 +65,17 @@ struct CardFront : View {
 }
 
 struct CardBack : View {
-    let width : CGFloat
-    let height : CGFloat
     @Binding var degree : Double
 
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
                 .fill(.white)
-                .frame(width: width, height: height)
+                .frame(maxWidth: .infinity)
+                .aspectRatio(0.65, contentMode: .fit)
                 .shadow(color: .gray, radius: 3, x: 1, y: 1)
-            
+                .padding(Design.Spacing.big)
+
             Text("?")
                 .font(.system(size: 42))
             
