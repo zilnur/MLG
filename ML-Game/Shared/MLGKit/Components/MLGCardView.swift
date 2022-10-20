@@ -62,6 +62,7 @@ struct CardFront : View {
 
             Text(role)
                 .font(.system(size: 36))
+                .foregroundColor(Color.black)
 
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
@@ -81,6 +82,7 @@ struct CardBack : View {
 
             Text("?")
                 .font(.system(size: 42))
+                .foregroundColor(Color.black)
             
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
 
