@@ -33,4 +33,9 @@ extension View {
     func setupImageSize() -> some View {
         modifier(SetupImageSize())
     }
+
+    /// Модификатор для вычисления размера
+    func readSize(_ size: Binding<CGSize>) -> some View {
+        self.modifier(SizeReaderModifier(size: size))
+    }
 }

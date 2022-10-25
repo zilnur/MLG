@@ -12,7 +12,7 @@ import SwiftUI
 struct ML_GameApp: App {
     var body: some Scene {
         WindowGroup {
-            CreateOfflineSessionScreen()
+            OfflineMafiaCreateSessionScreen()
         }
     }
 }

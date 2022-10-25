@@ -8,52 +8,102 @@
 import SwiftUI
 
 struct MLGStepper : View {
-    @State var value: Int = 0
+    @Binding var range: Range<Int>
+
+    @Binding var value: Int {
+        didSet {
+            onUpdateValue?()
+        }
+    }
+
+    var onUpdateValue: (()->())?
+
+    private var canDecrease: Bool {
+        value - 1 >= range.lowerBound
+    }
+    private var canIncrease: Bool {
+        value + 1 <= range.upperBound
+    }
 
     var body: some View {
         HStack(spacing: Design.Spacing.short) {
-            Button {
-                value = value - 1
-                feedback()
-            } label: { Image(systemName: Design.Icons.minus) }
-            .padding(Design.Size.short)
-            .foregroundColor(Design.Colors.primary)
+            makeButton(
+                iconName: Design.SystemNames.minus,
+                isActive: canDecrease) {
+                    if canDecrease {
+                        value = value - 1
+                        Feedback.pull()
+                    } else {
+                        Feedback.doublePull()
+                    }
+            }
 
             Divider()
+                .padding([.top, .bottom], Design.Spacing.short)
 
             Text("\(value)")
                 .frame(width: Design.Spacing.big)
                 .font(Design.Fonts.h3)
+                .onChange(of: range) { range in
+                    updateValue(range: range)
+                }
 
             Divider()
+                .padding([.top, .bottom], Design.Spacing.short)
 
-            Button {
-                value = value + 1
-                feedback()
-            } label: { Image(systemName: Design.Icons.plus) }
-            .foregroundColor(Design.Colors.primary)
-            .setupImageSize()
+            makeButton(
+                iconName: Design.SystemNames.plus,
+                isActive: canIncrease
+            ) {
+                if canIncrease {
+                    value = value + 1
+                    Feedback.pull()
+                } else {
+                    Feedback.doublePull()
+                }
+            }
         }
+        .frame(height: Design.Size.normal)
         .padding(Design.Spacing.short)
         .background(Design.Colors.background)
         .clipShape(
-            RoundedRectangle(
-                cornerRadius: Design.Spacing.short,
-                style: .continuous
-            )
+            Capsule()
         )
     }
 
-    func feedback() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
+    private func updateValue(range: Range<Int>) {
+        guard !range.contains(value) else { return }
+
+        value = value < range.upperBound ?
+            range.lowerBound :
+            range.upperBound
+    }
+
+    private func makeButton(iconName: String, isActive: Bool, onTapGesture: @escaping () -> ()) -> some View {
+        Image(systemName: iconName)
+            .resizable()
+            .scaledToFit()
+            .padding(Design.Spacing.short)
+            .frame(
+                width: Design.Size.normal,
+                height: Design.Size.normal
+            )
+            .foregroundColor(
+                isActive ?
+                    Design.Colors.primary :
+                    Design.Colors.special
+            )
+            .contentShape(Rectangle())
+            .onTapGesture {
+                onTapGesture()
+            }
     }
 }
 
 struct CustomStepper_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MLGStepper()
+            MLGStepper(range: .constant(0..<10), value: .constant(0))
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)

@@ -8,9 +8,16 @@
 import Foundation
 import SwiftUI
 
-class OfflineMafiaGame: ObservableObject {
-    @Published var players: [OfflineMafiaPlayer] = []
-    @Published var settings: OfflineMafiaGameSettings = OfflineMafiaGameSettings()
+///TODO:
+/// - Добавить загрузку и сохранение игры
+/// - Переписать логику с дефолтсами
+
+class OfflineMafiaGame {
+    /// Свойство, хранящее экземпляр
+    static let shared: OfflineMafiaGame = OfflineMafiaGame()
+
+    var players: [OfflineMafiaPlayer] = []
+    var settings: OfflineMafiaGameSettings = OfflineMafiaGameSettings()
     
     let playersSaveKey = "SavedPlayersData"
     let settingsSaveKey = "SavedSettingsData"
@@ -39,9 +46,9 @@ class OfflineMafiaGame: ObservableObject {
     }
     
     func saveSettings() {
-        if let encoded = try? JSONEncoder().encode(settings) {
-            UserDefaults.standard.set(encoded, forKey: settingsSaveKey)
-        }
+//        if let encoded = try? JSONEncoder().encode(settings) {
+//            UserDefaults.standard.set(encoded, forKey: settingsSaveKey)
+//        }
     }
     
     func savePlayers() {
@@ -49,16 +56,25 @@ class OfflineMafiaGame: ObservableObject {
             UserDefaults.standard.set(encoded, forKey: playersSaveKey)
         }
     }
-    
-    func createPlayer() {
-        getDataPlayers()
-        for id in 1...settings.playersCount {
-            let player = OfflineMafiaPlayer(id: id, role: .civilian)
-            players.append(player)
-        }
-        savePlayers()
+
+    func createGame() {
+
     }
-    
+
+    func createPlayers() {
+        players = OfflineMafiaPlayersProvider.makePlayers(by: settings)
+    }
+
+    func createPlayersIfNeeded() {
+        guard
+            players.isEmpty ||
+            players.count != settings.playersCount
+        else {
+            return
+        }
+        createPlayers()
+    }
+
     func nextPlayer() {
         currentPlayer = currentPlayer + 1 < players.count ? currentPlayer + 1 : currentPlayer
     }
@@ -70,19 +86,19 @@ class OfflineMafiaGame: ObservableObject {
     func getCurrentPlayer() -> MafiaPlayerProtocol {
         players[currentPlayer]
     }
-    func getRole(for playerId: PlayerId) -> MafiaPlayerRole {
-        players[playerId].role
+    func getRole(for index: Int) -> MafiaPlayerRole {
+        players[index].role
     }
     
     func set(name: String) {
         players[currentPlayer].name = name
     }
     
-    func set(name: String, for playerId: PlayerId) {
-        players[playerId].name = name
+    func set(name: String, for index: Int) {
+        players[index].name = name
     }
     
-    func kill(by playerId: PlayerId) {
-        players[playerId].isAlive = false
+    func kill(by index: Int) {
+        players[index].isAlive = false
     }
 }

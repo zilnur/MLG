@@ -7,10 +7,8 @@
 
 import Foundation
 
-typealias PlayerId = Int
-
 protocol MafiaPlayerProtocol {
-    var id: PlayerId { get set }
+    var id: Int { get set }
     var role: MafiaPlayerRole { get set }
     var name: String { get set }
     var isAlive: Bool { get set }

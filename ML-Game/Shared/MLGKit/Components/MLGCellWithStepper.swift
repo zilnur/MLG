@@ -8,43 +8,31 @@
 import SwiftUI
 
 struct MLGCellWithStepper : View {
-    @State var value: Int = 0
+    var title: String
+    @Binding var range: Range<Int>
+    @Binding var value: Int
+    var onUpdateValue: (()->())?
 
     var body: some View {
         VStack(alignment: .leading) {
-            Spacer()
-
             HStack(spacing: Design.Spacing.short) {
-                Text("Мафия")
+                Text(title)
                     .foregroundColor(Design.Colors.primary)
                     .font(Design.Fonts.h3)
-
                 Spacer()
-
-                MLGStepper(value: 1)
+                MLGStepper(range: $range, value: $value, onUpdateValue: onUpdateValue)
             }
-            .lineLimit(1)
-
-            Text("Слишком большое значение")
-                .foregroundColor(Design.Colors.error)
-                .font(Design.Fonts.h3)
         }
-    }
-
-    func feedback() {
-        let generator = UIImpactFeedbackGenerator(style: .light)
-        generator.impactOccurred()
+        .padding(Design.Spacing.short)
     }
 }
 
 struct MLGCellWithStepper_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MLGCellWithStepper()
-                .preferredColorScheme(.dark)
+            MLGCellWithStepper(title: "Мафия", range: .constant(0..<10), value: .constant(0))
         }
         .previewLayout(.sizeThatFits)
         .padding(8)
     }
 }
-

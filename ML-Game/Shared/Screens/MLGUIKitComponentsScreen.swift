@@ -9,7 +9,8 @@ import SwiftUI
 
 /// Экран для демонстрации существующих компонентов
 struct MLGUIKitComponentsScreen: View {
-    @State var value: Double = 0
+    @State var value: Int = 0
+    @State var isChecked: Bool = false
 
     var body: some View {
         ScrollView(.vertical) {
@@ -17,11 +18,13 @@ struct MLGUIKitComponentsScreen: View {
                 components
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.automatic)
         .toolbar {
-            Text("Здесь представлены все компоненты")
-                .font(Design.Fonts.h3)
-                .bold()
+            ToolbarItem(placement: .principal) {
+                Text("Здесь представлены все компоненты")
+                    .font(Design.Fonts.h3)
+                    .bold()
+            }
         }
     }
 
@@ -50,10 +53,17 @@ struct MLGUIKitComponentsScreen: View {
                 }
             }
             MLGPreviewComponent {
-                MLGStepper()
+                MLGStepper(range: .constant(0..<10), value: $value)
             }
             MLGPreviewComponent {
-                MLGCellWithStepper()
+                MLGCellWithStepper(
+                    title: "Текст ячейки",
+                    range: .constant(0..<10),
+                    value: $value
+                )
+            }
+            MLGPreviewComponent {
+                MLGCheckbox(isChecked: $isChecked, title: "Текст checkBox")
             }
             // <-- Новые компоненты добавлять сюда (коммент не стирать)
         }

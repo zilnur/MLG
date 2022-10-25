@@ -9,8 +9,6 @@ import SwiftUI
 
 /// Компонент для описания элементов, находящихся внутри него
 struct MLGPreviewComponent<Content> : View where Content : View {
-    @Environment(\.colorScheme) var colorScheme
-
     var content: Content
 
     init(@ViewBuilder content: () -> Content) {
