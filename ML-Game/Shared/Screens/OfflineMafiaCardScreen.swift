@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct OfflineMafiaCadrScreen: View {
-    @ObservedObject var gameSettings = OfflineMafiaGame()
+struct OfflineMafiaCardScreen: View {
+    @ObservedObject var viewModel: ViewModel = ViewModel()
     
     var body: some View {
         VStack() {
@@ -31,8 +31,16 @@ struct OfflineMafiaCadrScreen: View {
     }
 }
 
+// MARK: - PreviewProvider
 struct OfflineMafiaCadrScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OfflineMafiaCadrScreen()
+        OfflineMafiaCardScreen()
+    }
+}
+
+// MARK: - ViewModel
+extension OfflineMafiaCardScreen {
+    class ViewModel: ObservableObject {
+        @Published var game: OfflineMafiaGame = OfflineMafiaGame.shared
     }
 }
