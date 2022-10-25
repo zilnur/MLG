@@ -7,9 +7,50 @@
 
 import Foundation
 
-/// Перечисление с ролями игроков
+/// Роли игроков
 enum MafiaPlayerRole: Codable {
+    // Black roles
     case mafia
-    case civilian
+    case don
+    case maniac
+    // Red roles
     case commissioner
+    case doctor
+    case civilian
+    // Отсутствие роли
+    case none
+
+    var description: String {
+        switch self {
+        case .mafia:
+            return "Common.PlayerRole.mafia".localized
+        case .don:
+            return "Common.PlayerRole.don".localized
+        case .maniac:
+            return "Common.PlayerRole.maniac".localized
+        case .commissioner:
+            return "Common.PlayerRole.commissioner".localized
+        case .doctor:
+            return "Common.PlayerRole.doctor".localized
+        case .civilian:
+            return "Common.PlayerRole.civilian".localized
+        case .none:
+            return "Сщ"
+        }
+    }
+
+    var isBlackRole: Bool {
+        switch self {
+        case .mafia, .don, .maniac:
+            return true
+        case .commissioner, .doctor, .civilian:
+            return false
+        case .none:
+            return false
+        }
+    }
+
+    var isRedRole: Bool {
+        !isBlackRole
+    }
 }

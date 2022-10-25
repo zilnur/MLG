@@ -10,8 +10,6 @@ import SwiftUI
 /// Компонент, для отрисовки NavigationLink со стандартными параметрами, внутри контейнера.
 /// Будет отступать на значение  `Design.Spacing.standart`
 struct MLGNavigationLink<Label, Destination> : View where Label : View, Destination : View  {
-    @Environment(\.colorScheme) var colorScheme
-
     var destination: Destination
     var label: Label
 
@@ -34,8 +32,6 @@ struct MLGNavigationLink<Label, Destination> : View where Label : View, Destinat
                     .clipShape(Capsule())
             }
             .buttonStyle(.plain)
-            .padding(Design.Spacing.standart)
-            
         }
     }
 }

@@ -15,6 +15,15 @@
 		17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFB28F7065900B061EC /* OfflineMafiaGameSettings.swift */; };
 		17115AFE28F7066A00B061EC /* OfflineMafiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */; };
 		17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */; };
+		174ACF1C28FF1F1600ECA362 /* RoleAllocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF1B28FF1F1600ECA362 /* RoleAllocator.swift */; };
+		174ACF1E28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF1D28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift */; };
+		174ACF2028FF4A2D00ECA362 /* Array+SafeIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF1F28FF4A2D00ECA362 /* Array+SafeIndex.swift */; };
+		174ACF2228FF504100ECA362 /* GameFactsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF2128FF504100ECA362 /* GameFactsProvider.swift */; };
+		174ACF942906903900ECA362 /* MLGCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF932906903900ECA362 /* MLGCheckbox.swift */; };
+		174ACF962906911100ECA362 /* FeedbackHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF952906911100ECA362 /* FeedbackHelper.swift */; };
+		174ACF982907E5C100ECA362 /* MLGSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF972907E5C100ECA362 /* MLGSection.swift */; };
+		174ACF9A2907F23400ECA362 /* MLGScrollViewIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF992907F23400ECA362 /* MLGScrollViewIfNeeded.swift */; };
+		174ACF9C2907F28500ECA362 /* SizeReaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF9B2907F28500ECA362 /* SizeReaderModifier.swift */; };
 		176659A428F8AAF600288E9D /* ApplyColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A328F8AAF600288E9D /* ApplyColorTheme.swift */; };
 		176659A728F8ACB100288E9D /* View+Modificators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A628F8ACB100288E9D /* View+Modificators.swift */; };
 		176659A928F8C24900288E9D /* SetupImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A828F8C24900288E9D /* SetupImageSize.swift */; };
@@ -31,8 +40,9 @@
 		17D711FC28F863B300C6869C /* MLGStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D711FA28F863B300C6869C /* MLGStepper.swift */; };
 		17D711FE28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D711FD28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift */; };
 		17D711FF28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D711FD28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift */; };
-		17E52FD828F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */; };
-		17E52FD928F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */; };
+		17D81BEA290862B300A9D98C /* MLGTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D81BE9290862B300A9D98C /* MLGTextField.swift */; };
+		17E52FD828F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift */; };
+		17E52FD928F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FD728F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift */; };
 		17E52FDC28F744C0000D2FB7 /* FullScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FDB28F744C0000D2FB7 /* FullScreen.swift */; };
 		17E52FDD28F744C0000D2FB7 /* FullScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FDB28F744C0000D2FB7 /* FullScreen.swift */; };
 		17E52FE328F74835000D2FB7 /* Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FE228F74835000D2FB7 /* Design.swift */; };
@@ -45,8 +55,8 @@
 		17E52FEE28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */; };
 		A53107C328F94C2000195B12 /* UIView+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C228F94C2000195B12 /* UIView+Resource.swift */; };
 		A53107C428F94C2000195B12 /* UIView+Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C228F94C2000195B12 /* UIView+Resource.swift */; };
-		A53107C628FF067300195B12 /* OfflineMafiaCadrScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C528FF067300195B12 /* OfflineMafiaCadrScreen.swift */; };
-		A53107C728FF067300195B12 /* OfflineMafiaCadrScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C528FF067300195B12 /* OfflineMafiaCadrScreen.swift */; };
+		A53107C628FF067300195B12 /* OfflineMafiaCardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C528FF067300195B12 /* OfflineMafiaCardScreen.swift */; };
+		A53107C728FF067300195B12 /* OfflineMafiaCardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C528FF067300195B12 /* OfflineMafiaCardScreen.swift */; };
 		A53107C928FF0B3D00195B12 /* MLGCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C828FF0B3D00195B12 /* MLGCardView.swift */; };
 		A53107CA28FF0B3D00195B12 /* MLGCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53107C828FF0B3D00195B12 /* MLGCardView.swift */; };
 		A571B98E28F6DED300C08CB1 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = A571B98D28F6DED300C08CB1 /* Tests_iOS.swift */; };
@@ -89,6 +99,15 @@
 		17115AFB28F7065900B061EC /* OfflineMafiaGameSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGameSettings.swift; sourceTree = "<group>"; };
 		17115AFD28F7066A00B061EC /* OfflineMafiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaGame.swift; sourceTree = "<group>"; };
 		17115AFF28F7069400B061EC /* OfflineMafiaPlayersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaPlayersProvider.swift; sourceTree = "<group>"; };
+		174ACF1B28FF1F1600ECA362 /* RoleAllocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleAllocator.swift; sourceTree = "<group>"; };
+		174ACF1D28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaPlayersScreen.swift; sourceTree = "<group>"; };
+		174ACF1F28FF4A2D00ECA362 /* Array+SafeIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+SafeIndex.swift"; sourceTree = "<group>"; };
+		174ACF2128FF504100ECA362 /* GameFactsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactsProvider.swift; sourceTree = "<group>"; };
+		174ACF932906903900ECA362 /* MLGCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGCheckbox.swift; sourceTree = "<group>"; };
+		174ACF952906911100ECA362 /* FeedbackHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackHelper.swift; sourceTree = "<group>"; };
+		174ACF972907E5C100ECA362 /* MLGSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGSection.swift; sourceTree = "<group>"; };
+		174ACF992907F23400ECA362 /* MLGScrollViewIfNeeded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGScrollViewIfNeeded.swift; sourceTree = "<group>"; };
+		174ACF9B2907F28500ECA362 /* SizeReaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReaderModifier.swift; sourceTree = "<group>"; };
 		176659A328F8AAF600288E9D /* ApplyColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyColorTheme.swift; sourceTree = "<group>"; };
 		176659A628F8ACB100288E9D /* View+Modificators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modificators.swift"; sourceTree = "<group>"; };
 		176659A828F8C24900288E9D /* SetupImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupImageSize.swift; sourceTree = "<group>"; };
@@ -99,14 +118,15 @@
 		17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGUIKitComponentsScreen.swift; sourceTree = "<group>"; };
 		17D711FA28F863B300C6869C /* MLGStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGStepper.swift; sourceTree = "<group>"; };
 		17D711FD28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ResourceOrEmpty.swift"; sourceTree = "<group>"; };
-		17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOfflineSessionScreen.swift; sourceTree = "<group>"; };
+		17D81BE9290862B300A9D98C /* MLGTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGTextField.swift; sourceTree = "<group>"; };
+		17E52FD728F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaCreateSessionScreen.swift; sourceTree = "<group>"; };
 		17E52FDB28F744C0000D2FB7 /* FullScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreen.swift; sourceTree = "<group>"; };
 		17E52FE228F74835000D2FB7 /* Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Design.swift; sourceTree = "<group>"; };
 		17E52FE528F74935000D2FB7 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		17E52FE928F7496F000D2FB7 /* String+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Resource.swift"; sourceTree = "<group>"; };
 		17E52FEC28F74C66000D2FB7 /* MLGNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGNavigationLink.swift; sourceTree = "<group>"; };
 		A53107C228F94C2000195B12 /* UIView+Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Resource.swift"; sourceTree = "<group>"; };
-		A53107C528FF067300195B12 /* OfflineMafiaCadrScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaCadrScreen.swift; sourceTree = "<group>"; };
+		A53107C528FF067300195B12 /* OfflineMafiaCardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMafiaCardScreen.swift; sourceTree = "<group>"; };
 		A53107C828FF0B3D00195B12 /* MLGCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGCardView.swift; sourceTree = "<group>"; };
 		A571B97528F6DED200C08CB1 /* ML_GameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ML_GameApp.swift; sourceTree = "<group>"; };
 		A571B97728F6DED300C08CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -178,10 +198,12 @@
 		17115AF028F7051D00B061EC /* MafiaGame */ = {
 			isa = PBXGroup;
 			children = (
+				174ACF1B28FF1F1600ECA362 /* RoleAllocator.swift */,
 				17115AF128F7058300B061EC /* MafiaPlayerRole.swift */,
 				17115AF328F7059700B061EC /* MafiaPlayerProtocol.swift */,
 				17115AF528F705B800B061EC /* MafiaGameSettingsProtocol.swift */,
 				17115AF728F705DB00B061EC /* MafiaGameProtocol.swift */,
+				174ACF2128FF504100ECA362 /* GameFactsProvider.swift */,
 			);
 			path = MafiaGame;
 			sourceTree = "<group>";
@@ -191,6 +213,7 @@
 			children = (
 				176659A328F8AAF600288E9D /* ApplyColorTheme.swift */,
 				176659A828F8C24900288E9D /* SetupImageSize.swift */,
+				174ACF9B2907F28500ECA362 /* SizeReaderModifier.swift */,
 			);
 			path = Modificators;
 			sourceTree = "<group>";
@@ -199,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				176659A628F8ACB100288E9D /* View+Modificators.swift */,
+				174ACF1F28FF4A2D00ECA362 /* Array+SafeIndex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -206,11 +230,12 @@
 		17CCF80A28F807A400C8046A /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */,
 				A571B9C028F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift */,
 				A571B9C328F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift */,
-				17E52FD728F7435D000D2FB7 /* CreateOfflineSessionScreen.swift */,
-				A53107C528FF067300195B12 /* OfflineMafiaCadrScreen.swift */,
+				17E52FD728F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift */,
+				17CCF80728F8075800C8046A /* MLGUIKitComponentsScreen.swift */,
+				174ACF1D28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift */,
+				A53107C528FF067300195B12 /* OfflineMafiaCardScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -236,6 +261,10 @@
 				17CCF80428F8030700C8046A /* MLGPreviewComponent.swift */,
 				17D711FA28F863B300C6869C /* MLGStepper.swift */,
 				176659AC28F8C77900288E9D /* MLGCellWithStepper.swift */,
+				174ACF932906903900ECA362 /* MLGCheckbox.swift */,
+				174ACF972907E5C100ECA362 /* MLGSection.swift */,
+				174ACF992907F23400ECA362 /* MLGScrollViewIfNeeded.swift */,
+				17D81BE9290862B300A9D98C /* MLGTextField.swift */,
 				A53107C828FF0B3D00195B12 /* MLGCardView.swift */,
 			);
 			path = Components;
@@ -247,6 +276,7 @@
 				17E52FE928F7496F000D2FB7 /* String+Resource.swift */,
 				17D711FD28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift */,
 				A53107C228F94C2000195B12 /* UIView+Resource.swift */,
+				174ACF952906911100ECA362 /* FeedbackHelper.swift */,
 			);
 			path = MLGPlatform;
 			sourceTree = "<group>";
@@ -473,31 +503,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				174ACF982907E5C100ECA362 /* MLGSection.swift in Sources */,
 				A571B9C128F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */,
 				176659A428F8AAF600288E9D /* ApplyColorTheme.swift in Sources */,
+				174ACF1C28FF1F1600ECA362 /* RoleAllocator.swift in Sources */,
 				17D711FE28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift in Sources */,
 				176659A928F8C24900288E9D /* SetupImageSize.swift in Sources */,
+				174ACF2028FF4A2D00ECA362 /* Array+SafeIndex.swift in Sources */,
 				17115B0028F7069400B061EC /* OfflineMafiaPlayersProvider.swift in Sources */,
+				174ACF962906911100ECA362 /* FeedbackHelper.swift in Sources */,
+				174ACF2228FF504100ECA362 /* GameFactsProvider.swift in Sources */,
 				17E52FDC28F744C0000D2FB7 /* FullScreen.swift in Sources */,
 				17CCF80528F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
 				17115AF428F7059700B061EC /* MafiaPlayerProtocol.swift in Sources */,
 				17D711FB28F863B300C6869C /* MLGStepper.swift in Sources */,
+				174ACF1E28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift in Sources */,
 				17E52FE328F74835000D2FB7 /* Design.swift in Sources */,
 				A53107C928FF0B3D00195B12 /* MLGCardView.swift in Sources */,
 				17E52FED28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */,
+				174ACF9C2907F28500ECA362 /* SizeReaderModifier.swift in Sources */,
 				17CCF7FE28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */,
 				17115AF828F705DB00B061EC /* MafiaGameProtocol.swift in Sources */,
+				17D81BEA290862B300A9D98C /* MLGTextField.swift in Sources */,
 				176659AD28F8C77900288E9D /* MLGCellWithStepper.swift in Sources */,
 				176659A728F8ACB100288E9D /* View+Modificators.swift in Sources */,
 				17115AF628F705B800B061EC /* MafiaGameSettingsProtocol.swift in Sources */,
+				174ACF942906903900ECA362 /* MLGCheckbox.swift in Sources */,
 				17CCF80828F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */,
 				17115AFA28F7063F00B061EC /* OfflineMafiaPlayer.swift in Sources */,
-				A53107C628FF067300195B12 /* OfflineMafiaCadrScreen.swift in Sources */,
+				A53107C628FF067300195B12 /* OfflineMafiaCardScreen.swift in Sources */,
 				17CCF80128F7F69000C8046A /* MLGNavigationView.swift in Sources */,
 				17115AFE28F7066A00B061EC /* OfflineMafiaGame.swift in Sources */,
 				17E52FEA28F7496F000D2FB7 /* String+Resource.swift in Sources */,
 				17115AFC28F7065900B061EC /* OfflineMafiaGameSettings.swift in Sources */,
-				17E52FD828F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */,
+				17E52FD828F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift in Sources */,
+				174ACF9A2907F23400ECA362 /* MLGScrollViewIfNeeded.swift in Sources */,
 				A53107C328F94C2000195B12 /* UIView+Resource.swift in Sources */,
 				A571B9C428F83CA800C08CB1 /* OfflinePlayerNameInputScreen.swift in Sources */,
 				A571B99D28F6DED300C08CB1 /* ML_GameApp.swift in Sources */,
@@ -512,12 +552,12 @@
 				17E52FDD28F744C0000D2FB7 /* FullScreen.swift in Sources */,
 				A53107CA28FF0B3D00195B12 /* MLGCardView.swift in Sources */,
 				A571B9C228F719D600C08CB1 /* OfflineMafiaGameSettingsScreen.swift in Sources */,
-				A53107C728FF067300195B12 /* OfflineMafiaCadrScreen.swift in Sources */,
+				A53107C728FF067300195B12 /* OfflineMafiaCardScreen.swift in Sources */,
 				17E52FEB28F7496F000D2FB7 /* String+Resource.swift in Sources */,
 				17CCF80928F8075800C8046A /* MLGUIKitComponentsScreen.swift in Sources */,
 				17CCF7FF28F7642400C8046A /* MLGTitleSubtitle.swift in Sources */,
 				17D711FF28F8973D00C6869C /* UIImage+ResourceOrEmpty.swift in Sources */,
-				17E52FD928F7435D000D2FB7 /* CreateOfflineSessionScreen.swift in Sources */,
+				17E52FD928F7435D000D2FB7 /* OfflineMafiaCreateSessionScreen.swift in Sources */,
 				17E52FE428F74835000D2FB7 /* Design.swift in Sources */,
 				17D711FC28F863B300C6869C /* MLGStepper.swift in Sources */,
 				17E52FEE28F74C66000D2FB7 /* MLGNavigationLink.swift in Sources */,

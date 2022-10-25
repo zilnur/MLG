@@ -7,45 +7,78 @@
 
 import SwiftUI
 
-struct OfflinePlayerNameInputScreen: View {
-    @State var text = ""
-    @ObservedObject var gameSettings = OfflineMafiaGame()
+struct OfflineMafiaPlayerNameInputScreen: View {
+    @ObservedObject var viewModel: ViewModel = ViewModel()
 
-    init() {
-        gameSettings.getDataPlayers()
-    }
-    
     var body: some View {
         VStack {
-            MLGTitleSubtitle(
-                title: "Игроки",
-                subtitle: "Задайте имя игрокам"
-            )
-            ScrollView {
-                VStack {
-                    ForEach(0..<gameSettings.settings.playersCount) { player in
-                        TextField("Игрок \(player + 1)", text: $gameSettings.players[player].name)
-                            .padding(Design.Spacing.standart)
-                            .frame(maxWidth: .infinity)
-                            .background(Design.Colors.background)
-                            .clipShape(Capsule())
-                            .foregroundColor(Color.black)
-                            .multilineTextAlignment(.center)
+            MLGSection(title: Localization.sectionTitle) {
+                MLGScrollViewIfNeeded {
+                    VStack {
+                        ForEach(0..<viewModel.game.settings.playersCount) { index in
+                            MLGTextField(
+                                placeholder: viewModel.defaultName(for: index),
+                                text: $viewModel.game.players[index].name
+                            )
+                        }
                     }
                 }
-                .padding()
             }
+
             MLGNavigationLink {
-                OfflineMafiaCadrScreen()
+                OfflineMafiaPlayersScreen()
             } label: {
-                Text("Начать игру")
-            }.simultaneousGesture(TapGesture().onEnded {
-                gameSettings.savePlayers()
-            })
+                Text(Localization.buttonTitle)
+            }.simultaneousGesture(
+                TapGesture().onEnded {
+                    viewModel.game.createGame()
+                }
+            )
+        }
+        .padding(Design.Spacing.standart)
+        .navigationBarTitleDisplayMode(.automatic)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(Localization.title)
+                    .font(Design.Fonts.h3)
+                    .bold()
+            }
         }
         .onTapGesture {
             hideKeyboard()
         }
     }
-    
 }
+
+//MARK: - PreviewProvider
+struct OfflineMafiaPlayerNameInputScreen_Preview: PreviewProvider {
+    static var previews: some View {
+        OfflineMafiaPlayerNameInputScreen()
+    }
+}
+
+// MARK: - ViewModel
+extension OfflineMafiaPlayerNameInputScreen {
+    class ViewModel: ObservableObject {
+        @Published var game: OfflineMafiaGame = OfflineMafiaGame.shared
+
+        init() {
+            game.createPlayers()
+        }
+
+        func defaultName(for index: Int) -> String {
+            "\(Localization.playerName) \(game.players[index].id)"
+        }
+    }
+}
+
+// MARK: - Localization
+extension OfflineMafiaPlayerNameInputScreen {
+    enum Localization {
+        static let title: String = "OfflinePlayerNameInputScreen.title".localized
+        static let sectionTitle: String = "OfflinePlayerNameInputScreen.setPlayersName".localized
+        static let buttonTitle: String = "OfflinePlayerNameInputScreen.startGame".localized
+        static let playerName: String = "OfflinePlayerNameInputScreen.playerName".localized
+    }
+}
+

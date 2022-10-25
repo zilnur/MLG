@@ -7,36 +7,22 @@
 
 import Foundation
 
-final class OfflineMafiaPlayersProvider {
-    private var playersCount: Int
-    private var mafiasCount: Int
-
-    private var mafiasInGame: Int = 0
-    private var commissionerInGame: Int = 0
-
-    private var players: [OfflineMafiaPlayer] = []
-
-    init(settings: MafiaGameSettingsProtocol) {
-        playersCount = settings.playersCount
-        mafiasCount = settings.mafiasCount
+enum OfflineMafiaPlayersProvider {
+    static func makePlayers(by settings: OfflineMafiaGameSettings) -> [OfflineMafiaPlayer] {
+        var players: [OfflineMafiaPlayer] = []
+        for index in 0..<settings.playersCount {
+            players.append(makePlayer(by: index))
+        }
+        RoleAllocator.assign(for: players, by: settings)
+        return players
     }
 
-//    func getPlayers() -> [OfflineMafiaPlayer] {
-//        for index in 0..<playersCount {
-//            players.append(makePlayer(by: index))
-//        }
-//        return players
-//    }
-
-//    func makePlayer(by index: Int) -> OfflineMafiaPlayer {
-//        OfflineMafiaPlayer(
-//            id: index,
-//            role: .civilian,
-//            name: playerName(by: index)
-//        )
-//    }
-
-    func playerName(by index: Int) -> String {
-        "Игрок \(index)"
+    private static func makePlayer(by index: Int) -> OfflineMafiaPlayer {
+        OfflineMafiaPlayer(
+            id: index,
+            role: .none,
+            name:  "Игрок \(index)"
+        )
     }
+
 }

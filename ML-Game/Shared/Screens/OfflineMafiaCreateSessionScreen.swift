@@ -1,5 +1,5 @@
 //
-//  OfflineMafiaGameCreateSession.swift
+//  OfflineMafiaCreateSessionScreen.swift
 //  ML-Game
 //
 //  Created by Dmitry Leukhin on 12.10.2022.
@@ -8,26 +8,33 @@
 import SwiftUI
 
 /// Экран создания сессии
-struct CreateOfflineSessionScreen: View {
+struct OfflineMafiaCreateSessionScreen: View {
     @State var isScreenActive: Bool = false
 
     var body: some View {
         MLGNavigationView {
-            VStack(spacing: Design.Spacing.big) {
-                MLGTitleSubtitle(
-                    title: Localization.title,
-                    subtitle: Localization.subTitle,
-                    fontTitle: Design.Fonts.h0
-                )
-                MLGNavigationLink {
-                    // TODO: - Переход на следующий экран
-                    OfflineMafiaGameSettingsScreen()
-                } label: {
-                    Text(Localization.buttonTitle)
+            ZStack {
+                VStack(spacing: Design.Spacing.big) {
+                    MLGTitleSubtitle(
+                        title: Localization.title,
+                        subtitle: Localization.subTitle,
+                        fontTitle: Design.Fonts.h0
+                    )
+                    MLGNavigationLink {
+                        OfflineMafiaGameSettingsScreen()
+                    } label: {
+                        Text(Localization.buttonTitle)
+                    }
+                    .padding(Design.Spacing.big)
                 }
-                .padding(Design.Spacing.big)
+                VStack {
+                    Spacer()
+                    Text(GameFactsProvider.getRandomFact())
+                        .font(Design.Fonts.h4)
+                        .padding(Design.Spacing.big)
+                        .foregroundColor(Design.Colors.special)
+                }
             }
-            // Настройки NavigationBar
             .background(
                 NavigationLink(
                     destination: MLGUIKitComponentsScreen(),
@@ -46,22 +53,22 @@ struct CreateOfflineSessionScreen: View {
         Button {
             isScreenActive = true
         } label: {
-            Image(systemName: Design.Icons.gear)
+            Image(systemName: Design.SystemNames.gear)
         }
     }
 }
 
 //MARK: - PreviewProvider
-struct CreateOfflineSessionScreen_Previews: PreviewProvider {
+struct OfflineMafiaCreateSessionScreen_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CreateOfflineSessionScreen()
+            OfflineMafiaCreateSessionScreen()
         }
     }
 }
 
 //MARK: - Constant
-extension CreateOfflineSessionScreen {
+extension OfflineMafiaCreateSessionScreen {
     enum Localization {
         static let title: String = "Application.name".localized
         static let subTitle: String = "CreateOfflineSessionScreen.description".localized

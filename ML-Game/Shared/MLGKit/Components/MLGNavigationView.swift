@@ -9,8 +9,6 @@ import SwiftUI
 
 /// Компонент, для отрисовки NavigationLink со стандартными параметрами, снутри контейнера будет отступать на значение
 struct MLGNavigationView<Content> : View where Content : View {
-    @Environment(\.colorScheme) var colorScheme
-
     var content: Content
 
     init(@ViewBuilder content: () -> Content) {

@@ -38,10 +38,13 @@ struct MLGTitleSubtitle: View {
     }
 }
 
-struct CreateOfflineSessionScren_Previews: PreviewProvider {
+struct MLGTitleSubtitle_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            CreateOfflineSessionScreen()
+            MLGTitleSubtitle(
+                title: "Заголовок",
+                subtitle: "Подзаголовок"
+            )
         }
     }
 }

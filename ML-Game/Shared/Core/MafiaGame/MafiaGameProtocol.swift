@@ -17,10 +17,10 @@ protocol MafiaGameProtocol {
     func getCurrentPlayer() -> MafiaPlayerProtocol
 
     func getRoleOfCurrentPlayer() -> MafiaPlayerRole
-    func getRole(for playerId: PlayerId) -> MafiaPlayerRole
+    func getRole(for index: Int) -> MafiaPlayerRole
 
     func set(name: String)
-    func set(name: String, for playerId: PlayerId)
+    func set(name: String, for index: Int)
 
-    func kill(by playerId: PlayerId)
+    func kill(by index: Int)
 }
