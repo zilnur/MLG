@@ -61,7 +61,7 @@ struct MLGCheckbox : View {
                 Feedback.pull()
                 isChecked.toggle()
             } else {
-                Feedback.doublePull()
+//                Feedback.doublePull()
             }
         }
         

@@ -29,13 +29,9 @@ struct MLGStepper : View {
         HStack(spacing: Design.Spacing.short) {
             makeButton(
                 iconName: Design.SystemNames.minus,
-                isActive: canDecrease) {
-                    if canDecrease {
-                        value = value - 1
-                        Feedback.pull()
-                    } else {
-                        Feedback.doublePull()
-                    }
+                isActive: canDecrease
+            ) {
+                    value = value - 1
             }
 
             Divider()
@@ -55,12 +51,7 @@ struct MLGStepper : View {
                 iconName: Design.SystemNames.plus,
                 isActive: canIncrease
             ) {
-                if canIncrease {
-                    value = value + 1
-                    Feedback.pull()
-                } else {
-                    Feedback.doublePull()
-                }
+                value = value + 1
             }
         }
         .frame(height: Design.Size.normal)
@@ -95,7 +86,12 @@ struct MLGStepper : View {
             )
             .contentShape(Rectangle())
             .onTapGesture {
-                onTapGesture()
+                if isActive {
+                    onTapGesture()
+                    Feedback.pull()
+                } else {
+                    
+                }
             }
     }
 }

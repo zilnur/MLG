@@ -13,9 +13,9 @@ enum Feedback {
         generator.impactOccurred()
     }
 
-    static func doublePull(timeInterval: TimeInterval = 0.1, style: UIImpactFeedbackGenerator.FeedbackStyle = .light) {
+    static func doublePull(dispatchTime: DispatchTime = .now() + 0.1, style: UIImpactFeedbackGenerator.FeedbackStyle = .light) {
         pull(style: style)
-        _ = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: false) { [style] timer in
+        DispatchQueue.global().asyncAfter(deadline: dispatchTime) {
             pull(style: style)
         }
     }
