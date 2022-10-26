@@ -10,13 +10,12 @@ import SwiftUI
 struct MLGCheckbox : View {
     @Binding var isChecked: Bool
     var title: String
+    var image: Image?
     var isEnabled: Bool = true
     var color: Color = Design.Colors.primary
     var background: Color = Design.Colors.background
     var titleColor: Color = Design.Colors.primary
-
-    //Test
-    var image: Image?
+    var onToggle: (()->())?
 
     var body: some View {
         ZStack {
@@ -57,15 +56,12 @@ struct MLGCheckbox : View {
                 )
         )
         .onTapGesture {
-            if isEnabled {
+            if isEnabled || isChecked {
                 Feedback.pull()
                 isChecked.toggle()
-            } else {
-//                Feedback.doublePull()
+                onToggle?()
             }
         }
-        
-            
     }
 }
 

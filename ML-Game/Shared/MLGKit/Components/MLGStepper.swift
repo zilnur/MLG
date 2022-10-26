@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MLGStepper : View {
-    @Binding var range: Range<Int>
+    var range: Range<Int>
 
     @Binding var value: Int {
         didSet {
@@ -99,7 +99,7 @@ struct MLGStepper : View {
 struct CustomStepper_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MLGStepper(range: .constant(0..<10), value: .constant(0))
+            MLGStepper(range: 0..<10, value: .constant(0))
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)

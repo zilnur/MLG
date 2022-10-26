@@ -13,7 +13,7 @@ import SwiftUI
 /// - Переписать логику с дефолтсами
 
 class OfflineMafiaGame {
-    /// Свойство, хранящее экземпляр
+    /// Синглтон свойство
     static let shared: OfflineMafiaGame = OfflineMafiaGame()
 
     var players: [OfflineMafiaPlayer] = []
@@ -58,7 +58,7 @@ class OfflineMafiaGame {
     }
 
     func createGame() {
-
+        OfflineMafiaPlayersProvider.makeDefaultValueForEmptyNames(of: players)
     }
 
     func createPlayers() {

@@ -17,6 +17,7 @@
 "Common.PlayerRole.commissioner" = "Комиссар/Шериф"; // Решить кто в итоге
 "Common.PlayerRole.civilian" = "Мирный житель";
 "Common.PlayerRole.doctor" = "Доктор";
+"Common.PlayerRole.journalist" = "Журналист";
 "Common.PlayerRole.none" = "Нет роли";
 
 // MARK: - RoleAllocator

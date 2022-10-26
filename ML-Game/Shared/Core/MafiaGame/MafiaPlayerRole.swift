@@ -17,6 +17,7 @@ enum MafiaPlayerRole: Codable {
     case commissioner
     case doctor
     case civilian
+    case journalist
     // Отсутствие роли
     case none
 
@@ -34,8 +35,10 @@ enum MafiaPlayerRole: Codable {
             return "Common.PlayerRole.doctor".localized
         case .civilian:
             return "Common.PlayerRole.civilian".localized
+        case .journalist:
+            return "Common.PlayerRole.journalist".localized
         case .none:
-            return "Сщ"
+            return "Common.PlayerRole.none".localized
         }
     }
 
@@ -43,7 +46,7 @@ enum MafiaPlayerRole: Codable {
         switch self {
         case .mafia, .don, .maniac:
             return true
-        case .commissioner, .doctor, .civilian:
+        case .commissioner, .doctor, .civilian, .journalist:
             return false
         case .none:
             return false

@@ -34,6 +34,7 @@ enum RoleAllocator {
         let doctorIndex: Int
         let donIndex: Int
         let maniacIndex: Int
+        let journalistIndex: Int
 
         var randomIndex: Int
 
@@ -69,6 +70,12 @@ enum RoleAllocator {
             randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
             maniacIndex = freeRolesIndexes.remove(at: randomIndex)
             players[maniacIndex].role = MafiaPlayerRole.maniac
+        }
+
+        if settings.shouldBeJournalist && freeRolesIndexes.count > 0 {
+            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
+            journalistIndex = freeRolesIndexes.remove(at: randomIndex)
+            players[journalistIndex].role = MafiaPlayerRole.journalist
         }
 
         freeRolesIndexes.forEach { index in

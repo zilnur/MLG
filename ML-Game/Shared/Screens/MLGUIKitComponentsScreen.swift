@@ -53,12 +53,12 @@ struct MLGUIKitComponentsScreen: View {
                 }
             }
             MLGPreviewComponent {
-                MLGStepper(range: .constant(0..<10), value: $value)
+                MLGStepper(range: 0..<10, value: $value)
             }
             MLGPreviewComponent {
                 MLGCellWithStepper(
                     title: "Текст ячейки",
-                    range: .constant(0..<10),
+                    range: 0..<10,
                     value: $value
                 )
             }

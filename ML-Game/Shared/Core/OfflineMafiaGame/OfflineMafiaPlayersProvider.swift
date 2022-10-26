@@ -8,12 +8,20 @@
 import Foundation
 
 enum OfflineMafiaPlayersProvider {
+    static func makeDefaultValueForEmptyNames(of players: [OfflineMafiaPlayer]) {
+        players.forEach { player in
+            player.name = player.name.isEmpty ? makeDefaultName(by: player.id) : player.name
+        }
+    }
+
     static func makePlayers(by settings: OfflineMafiaGameSettings) -> [OfflineMafiaPlayer] {
         var players: [OfflineMafiaPlayer] = []
+
         for index in 0..<settings.playersCount {
             players.append(makePlayer(by: index))
         }
         RoleAllocator.assign(for: players, by: settings)
+
         return players
     }
 
@@ -21,8 +29,11 @@ enum OfflineMafiaPlayersProvider {
         OfflineMafiaPlayer(
             id: index,
             role: .none,
-            name:  "Игрок \(index)"
+            name: makeDefaultName(by: index)
         )
     }
 
+    private static func makeDefaultName(by index: Int) -> String {
+        "Игрок \(index)"
+    }
 }

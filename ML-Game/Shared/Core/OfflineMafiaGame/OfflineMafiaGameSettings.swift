@@ -8,23 +8,24 @@
 import Foundation
 
 class OfflineMafiaGameSettings: Codable {
-    var playersCount: Int = 1 {
-        didSet {
-            recommendedPlayersRange = RoleAllocator.playersRange(for: self)
-        }
-    }
-    var mafiasCount: Int = 1 {
-        didSet {
-            recommendedMafiasCount = RoleAllocator.mafiasRange(for: self)
-        }
-    }
+    var playersCount: Int = 1
+    var mafiasCount: Int = 1
 
-    var recommendedPlayersRange: Range<Int> = 1..<20
-    var recommendedMafiasCount: Range<Int> = 1..<3
+    //TODO: - Возможно перенести в словарь?
+    var shouldBeDon: Bool = false
+    var shouldBeManiac: Bool = false
+    var shouldBeDoctor: Bool = false
+    var shouldBeJournalist: Bool = false
 
-    // Для теста сделал true
-    var shouldBeDon: Bool = true
-    var shouldBeManiac: Bool = true
-    var shouldBeDoctor: Bool = true
+    var selectedRolesCount: Int {
+        var counter: Int = 0
+
+        counter = shouldBeDon ? counter + 1 : counter
+        counter = shouldBeManiac ? counter + 1 : counter
+        counter = shouldBeDoctor ? counter + 1 : counter
+        counter = shouldBeJournalist ? counter + 1 : counter
+
+        return counter
+    }
 }
 
