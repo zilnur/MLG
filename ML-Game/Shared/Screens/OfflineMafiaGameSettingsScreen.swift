@@ -17,56 +17,57 @@ struct OfflineMafiaGameSettingsScreen: View {
                     MLGSection(title: Localization.rolesCount) {
                         MLGCellWithStepper(
                             title: Localization.playerCountTitle,
-                            range: $viewModel.playersRange,
+                            range: viewModel.playersRange,
                             value: $viewModel.game.settings.playersCount
-                        ) {
-                            viewModel.playersRange = RoleAllocator.playersRange(for: viewModel.game.settings)
-                            viewModel.mafiasRange = RoleAllocator.mafiasRange(for: viewModel.game.settings)
-                        }
+                        )
 
                         MLGCellWithStepper(
                             title: Localization.mafiaCountTitle,
-                            range: $viewModel.mafiasRange,
+                            range: viewModel.mafiasRange,
                             value: $viewModel.game.settings.mafiasCount
-                        ) {
-                            viewModel.playersRange = RoleAllocator.playersRange(for: viewModel.game.settings)
-                            viewModel.mafiasRange = RoleAllocator.mafiasRange(for: viewModel.game.settings)
-                        }
+                        )
                     }
 
                     MLGSection(title: Localization.additionalRoles) {
+                        // TODO: - Придумать как добавить сюда ForEach
                         MLGCheckbox(
                             isChecked: $viewModel.game.settings.shouldBeDon,
                             title: Localization.donRoleTitle,
-                            image: Design.Images.donMafia
+                            image: Design.Images.donMafia,
+                            isEnabled: viewModel.isAddingRoleEnabled
                         )
 
                         MLGCheckbox(
                             isChecked: $viewModel.game.settings.shouldBeDoctor,
                             title: Localization.doctorRoleTitle,
-                            image: Design.Images.doctor
+                            image: Design.Images.doctor,
+                            isEnabled: viewModel.isAddingRoleEnabled
                         )
 
                         MLGCheckbox(
                             isChecked: $viewModel.game.settings.shouldBeManiac,
                             title: Localization.maniacRoleTitle,
-                            image: Design.Images.maniac
+                            image: Design.Images.maniac,
+                            isEnabled: viewModel.isAddingRoleEnabled
+                        )
+
+                        MLGCheckbox(
+                            isChecked: $viewModel.game.settings.shouldBeJournalist,
+                            title: Localization.journalistRoleTitle,
+                            image: Design.Images.journalist,
+                            isEnabled: viewModel.isAddingRoleEnabled
                         )
                     }
                 }
             }
 
-            MLGNavigationLink {
-                OfflineMafiaPlayerNameInputScreen()
-            } label: {
-                Text(Localization.buttonTitle)
+            MLGSection {
+                MLGNavigationLink {
+                    OfflineMafiaPlayerNameInputScreen()
+                } label: {
+                    Text(Localization.buttonTitle)
+                }
             }
-            // TODO: Нужно ли это нам?
-            .simultaneousGesture(
-                TapGesture()
-                    .onEnded {
-                    }
-            )
         }
         .padding(Design.Spacing.standart)
         .navigationBarTitleDisplayMode(.automatic)
@@ -92,12 +93,22 @@ extension OfflineMafiaGameSettingsScreen {
     class ViewModel: ObservableObject {
         @Published var game: OfflineMafiaGame = OfflineMafiaGame.shared
 
-        @Published var playersRange: Range<Int> = 1..<20
-        @Published var mafiasRange: Range<Int> = 1..<3
+        var playersRange: Range<Int> {
+            RoleAllocator.playersRange(for: game.settings)
+        }
+
+        var mafiasRange: Range<Int>{
+            RoleAllocator.mafiasRange(for: game.settings)
+        }
+
+        /// Возможность добавления новой роли в игре (количество ограниченно)
+        var isAddingRoleEnabled: Bool {
+            game.settings.selectedRolesCount < game.settings.playersCount - game.settings.mafiasCount - 1
+        }
     }
 }
 
-//MARK: - Constant
+//MARK: - Localization
 extension OfflineMafiaGameSettingsScreen {
     enum Localization {
         static let title: String = "OfflineMafiaGameSettingsScreen.title".localized
@@ -111,5 +122,6 @@ extension OfflineMafiaGameSettingsScreen {
         static let donRoleTitle: String = "Common.PlayerRole.don".localized
         static let maniacRoleTitle: String = "Common.PlayerRole.maniac".localized
         static let doctorRoleTitle: String = "Common.PlayerRole.doctor".localized
+        static let journalistRoleTitle: String = "Common.PlayerRole.journalist".localized
     }
 }

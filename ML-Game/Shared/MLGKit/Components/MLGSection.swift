@@ -14,9 +14,11 @@ struct MLGSection<Content> : View where Content : View {
 
     var body: some View {
         VStack(spacing: spacing) {
-            Text(title)
-                .font(Design.Fonts.h3)
-                .bold()
+            if !title.isEmpty {
+                Text(title)
+                    .font(Design.Fonts.h3)
+                    .bold()
+            }
             VStack {
                 content
             }

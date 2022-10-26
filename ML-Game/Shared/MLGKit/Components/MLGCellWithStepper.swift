@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MLGCellWithStepper : View {
     var title: String
-    @Binding var range: Range<Int>
+    var range: Range<Int>
     @Binding var value: Int
     var onUpdateValue: (()->())?
 
@@ -20,7 +20,7 @@ struct MLGCellWithStepper : View {
                     .foregroundColor(Design.Colors.primary)
                     .font(Design.Fonts.h3)
                 Spacer()
-                MLGStepper(range: $range, value: $value, onUpdateValue: onUpdateValue)
+                MLGStepper(range: range, value: $value, onUpdateValue: onUpdateValue)
             }
         }
         .padding(Design.Spacing.short)
@@ -30,7 +30,7 @@ struct MLGCellWithStepper : View {
 struct MLGCellWithStepper_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            MLGCellWithStepper(title: "Мафия", range: .constant(0..<10), value: .constant(0))
+            MLGCellWithStepper(title: "Мафия", range: 0..<10, value: .constant(0))
         }
         .previewLayout(.sizeThatFits)
         .padding(8)
