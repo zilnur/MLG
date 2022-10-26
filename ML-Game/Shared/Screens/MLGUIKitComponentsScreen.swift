@@ -65,6 +65,9 @@ struct MLGUIKitComponentsScreen: View {
             MLGPreviewComponent {
                 MLGCheckbox(isChecked: $isChecked, title: "Текст checkBox")
             }
+            MLGPreviewComponent {
+                MLGCardView(role: "Мирный житель")
+            }
             // <-- Новые компоненты добавлять сюда (коммент не стирать)
         }
     }

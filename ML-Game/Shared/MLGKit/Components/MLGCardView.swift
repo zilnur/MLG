@@ -13,6 +13,8 @@ struct MLGCardView: View {
     @State var frontDegree = -90.0
     @State var isFlipped = false
     
+    @State var role: String
+    
     let durationAndDelay : CGFloat = 0.2
 
     //MARK: Flip Card Function
@@ -37,7 +39,7 @@ struct MLGCardView: View {
     //MARK: View Body
     var body: some View {
         ZStack {
-            CardFront(degree: $frontDegree)
+            CardFront(role: role, degree: $frontDegree)
             CardBack(degree: $backDegree)
         }.onTapGesture {
             flipCard ()
@@ -46,6 +48,7 @@ struct MLGCardView: View {
 }
 
 struct CardFront : View {
+    @State var role: String
     @Binding var degree : Double
 
     var body: some View {
@@ -57,8 +60,9 @@ struct CardFront : View {
                 .shadow(color: .gray, radius: 3, x: 1, y: 1)
                 .padding(Design.Spacing.big)
 
-            Text("Мафия")
+            Text(role)
                 .font(.system(size: 36))
+                .foregroundColor(Color.black)
 
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
     }
@@ -78,6 +82,7 @@ struct CardBack : View {
 
             Text("?")
                 .font(.system(size: 42))
+                .foregroundColor(Color.black)
             
         }.rotation3DEffect(Angle(degrees: degree), axis: (x: 0, y: 1, z: 0))
 
@@ -86,6 +91,6 @@ struct CardBack : View {
 
 struct MLGCardView_Previews: PreviewProvider {
     static var previews: some View {
-        MLGCardView()
+        MLGCardView(role: "Мирный житель")
     }
 }

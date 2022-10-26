@@ -26,7 +26,7 @@ struct OfflineMafiaPlayerNameInputScreen: View {
             }
 
             MLGNavigationLink {
-                OfflineMafiaPlayersScreen()
+                OfflineMafiaCardScreen()
             } label: {
                 Text(Localization.buttonTitle)
             }.simultaneousGesture(

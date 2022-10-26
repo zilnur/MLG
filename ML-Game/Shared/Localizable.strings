@@ -14,8 +14,8 @@
 "Common.PlayerRole.mafia" = "Мафия";
 "Common.PlayerRole.don" = "Дон мафии";
 "Common.PlayerRole.maniac" = "Маньяк";
-"Common.PlayerRole.commissioner" = "Комиссар/Шериф"; // Решить кто в итоге
-"Common.PlayerRole.civilian" = "Мирный житель";
+"Common.PlayerRole.commissioner" = "Комиссар"; // Решить кто в итоге Шериф или Комиссар
+"Common.PlayerRole.civilian" = "Мирный";
 "Common.PlayerRole.doctor" = "Доктор";
 "Common.PlayerRole.journalist" = "Журналист";
 "Common.PlayerRole.none" = "Нет роли";
@@ -27,7 +27,7 @@
 "CreateOfflineSessionScreen.description" = "Начните игру прямо сейчас";
 "CreateOfflineSessionScreen.button.title" = "Начать создание игры";
 
-//MARK: - OfflineMafiaGameSettingsScreen Strings
+// MARK: - OfflineMafiaGameSettingsScreen Strings
 "OfflineMafiaGameSettingsScreen.title" = "Настройте игру";
 "OfflineMafiaGameSettingsScreen.rolesCount" = "Выберете количество ролей";
 "OfflineMafiaGameSettingsScreen.additionalRoles" = "Выберите дополнительные роли";
@@ -36,14 +36,19 @@
 "OfflineMafiaGameSettingsScreen.mafiaCount" = "Мафия";
 "OfflineMafiaGameSettingsScreen.button.title" = "Создать игру";
 
-//MARK: - OfflineMafiaPlayersScreen String
+// MARK: - OfflineMafiaCardScreen
+"OfflineMafiaCardScreen.button.title" = "Ваша роль";
+"OfflineMafiaCardScreen.button.nextPlayer" = "Перейти к следующему игроку";
+"OfflineMafiaCardScreen.button.goToLeader" = "Перейти к ведущему игроку";
+
+// MARK: - OfflineMafiaPlayersScreen String
 "OfflinePlayerNameInputScreen.title" = "Игроки";
 "OfflinePlayerNameInputScreen.setPlayersName" = "Задайте имя игрокам";
 "OfflinePlayerNameInputScreen.startGame" = "Начать игру";
 "OfflinePlayerNameInputScreen.playerName" = "Игрок";
 
 // TODO: найти что-нибудь интересное, пока с вики взял
-//MARK: - Game Facts
+// MARK: - Game Facts
 "GameFactsProvdier.fact.1" = "По словам автора, переехавшего в 1991 году в Бостон, игра базируется на культурно-исторической теории советского психолога 1920-х годов Л. С. Выготского";
 "GameFactsProvider.fact.2" = "Исследователи выделяют два типа игр: состязание (борьба) и представление (маскарад). «Мафия» удачно сочетает в себе черты обоих типов. Она одновременно и шоу, и борьба за выживание. Самое главное, она приносит интеллектуальное удовольствие. В бескорыстной несерьёзности игры скрыт её потенциал";
 "GameFactsProvider.fact.3" = "Игра «Мафия» используется для лечения азартных людей от игровой зависимости в Китае и как средство перевоспитания «трудных» подростков в США. С помощью «Мафии» к роли будущих присяжных готовятся японские старшеклассники";

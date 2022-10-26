@@ -58,6 +58,7 @@ class OfflineMafiaGame {
     }
 
     func createGame() {
+        currentPlayer = 0
         OfflineMafiaPlayersProvider.makeDefaultValueForEmptyNames(of: players)
     }
 
@@ -76,7 +77,11 @@ class OfflineMafiaGame {
     }
 
     func nextPlayer() {
-        currentPlayer = currentPlayer + 1 < players.count ? currentPlayer + 1 : currentPlayer
+        currentPlayer = canMoveToNextPlayer() ? currentPlayer + 1 : currentPlayer
+    }
+
+    func canMoveToNextPlayer() -> Bool {
+        currentPlayer + 1 < players.count
     }
     
     func getRoleOfCurrentPlayer() -> MafiaPlayerRole {
