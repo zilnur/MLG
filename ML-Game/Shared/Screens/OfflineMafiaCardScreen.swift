@@ -12,17 +12,40 @@ struct OfflineMafiaCardScreen: View {
     
     var body: some View {
         VStack() {
-            MLGTitleSubtitle(
-                title: "Игрок 1",
-                subtitle: "Ваша роль"
-            )
-            Spacer()
-            MLGCardView(role: gameSettings.players[0].role.rawValue)
-            Spacer()
-            MLGNavigationLink {
+            MLGSection(title: Localization.title) {
+                Spacer()
+
+                MLGCardView(role: viewModel.game.getRoleOfCurrentPlayer().description)
                 
-            } label: {
-                Text("Следующий игрок")
+                Spacer()
+
+                MLGNavigationLink {
+                    if viewModel.game.canMoveToNextPlayer() {
+                        OfflineMafiaCardScreen()
+                    } else {
+                        OfflineMafiaPlayersScreen()
+                    }
+                } label: {
+                    if viewModel.game.canMoveToNextPlayer() {
+                        Text(Localization.nextPlayer)
+                    } else {
+                        Text(Localization.goToLeader)
+                    }
+                   
+                }.simultaneousGesture(
+                    TapGesture().onEnded {
+                        viewModel.game.nextPlayer()
+                    }
+                )
+            }
+        }
+        .padding(Design.Spacing.standart)
+        .navigationBarTitleDisplayMode(.automatic)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Text(viewModel.game.getCurrentPlayer().name)
+                    .font(Design.Fonts.h3)
+                    .bold()
             }
         }
         .onTapGesture {
@@ -32,7 +55,7 @@ struct OfflineMafiaCardScreen: View {
 }
 
 // MARK: - PreviewProvider
-struct OfflineMafiaCadrScreen_Previews: PreviewProvider {
+struct OfflineMafiaCardScreen_Previews: PreviewProvider {
     static var previews: some View {
         OfflineMafiaCardScreen()
     }
@@ -42,5 +65,13 @@ struct OfflineMafiaCadrScreen_Previews: PreviewProvider {
 extension OfflineMafiaCardScreen {
     class ViewModel: ObservableObject {
         @Published var game: OfflineMafiaGame = OfflineMafiaGame.shared
+    }
+}
+
+extension OfflineMafiaCardScreen {
+    enum Localization {
+        static let title: String = "OfflineMafiaCardScreen.button.title".localized
+        static let nextPlayer: String = "OfflineMafiaCardScreen.button.nextPlayer".localized
+        static let goToLeader: String = "OfflineMafiaCardScreen.button.goToLeader".localized
     }
 }
