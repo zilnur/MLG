@@ -9,12 +9,14 @@ import SwiftUI
 
 struct MLGCheckbox : View {
     @Binding var isChecked: Bool
+
     var title: String
-    var image: Image?
-    var isEnabled: Bool = true
-    var color: Color = Design.Colors.primary
-    var background: Color = Design.Colors.background
     var titleColor: Color = Design.Colors.primary
+    var image: Image?
+    var imageColor: Color = Design.Colors.primary
+    var borderColor: Color = Design.Colors.primary
+    var background: Color = Design.Colors.background
+    var isEnabled: Bool = true
     var onToggle: (()->())?
 
     var body: some View {
@@ -30,7 +32,7 @@ struct MLGCheckbox : View {
                             width: Design.Size.big,
                             height: Design.Size.big
                         )
-                        .foregroundColor(Design.Colors.primary)
+                        .foregroundColor(imageColor)
                     Spacer()
                 }
             }
@@ -49,7 +51,7 @@ struct MLGCheckbox : View {
         .background(
             Capsule()
                 .strokeBorder(lineWidth: Design.Width.standart, antialiased: false)
-                .foregroundColor(isChecked ? color : background)
+                .foregroundColor(isChecked ? borderColor : background)
                 .background(
                     Capsule()
                         .foregroundColor(background)
