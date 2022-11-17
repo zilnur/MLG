@@ -12,49 +12,29 @@ struct OfflineMafiaGameSettingsScreen: View {
 
     var body: some View {
         VStack {
-            MLGScrollViewIfNeeded {
-                VStack {
-                    MLGSection(title: Localization.rolesCount) {
-                        MLGCellWithStepper(
-                            title: Localization.playerCountTitle,
-                            range: viewModel.playersRange,
-                            value: $viewModel.game.settings.playersCount
-                        )
+            MLGSection(title: Localization.rolesCount) {
+                MLGCellWithStepper(
+                    title: Localization.playerCountTitle,
+                    range: viewModel.playersRange,
+                    value: $viewModel.game.settings.playersCount
+                )
 
-                        MLGCellWithStepper(
-                            title: Localization.mafiaCountTitle,
-                            range: viewModel.mafiasRange,
-                            value: $viewModel.game.settings.mafiasCount
-                        )
-                    }
+                MLGCellWithStepper(
+                    title: Localization.mafiaCountTitle,
+                    range: viewModel.mafiasRange,
+                    value: $viewModel.game.settings.mafiasCount
+                )
+            }
 
-                    MLGSection(title: Localization.additionalRoles) {
-                        // TODO: - Придумать как добавить сюда ForEach
-                        MLGCheckbox(
-                            isChecked: $viewModel.game.settings.shouldBeDon,
-                            title: Localization.donRoleTitle,
-                            image: Design.Images.donMafia,
-                            isEnabled: viewModel.isAddingRoleEnabled
-                        )
+            MLGSection(title: Localization.additionalRoles) {
+                MLGScrollViewIfNeeded {
+                    ForEach(0..<$viewModel.game.settings.shouldBeRole.count) { index in
+                        let role = viewModel.game.settings.shouldBeRole[index].role
 
                         MLGCheckbox(
-                            isChecked: $viewModel.game.settings.shouldBeDoctor,
-                            title: Localization.doctorRoleTitle,
-                            image: Design.Images.doctor,
-                            isEnabled: viewModel.isAddingRoleEnabled
-                        )
-
-                        MLGCheckbox(
-                            isChecked: $viewModel.game.settings.shouldBeManiac,
-                            title: Localization.maniacRoleTitle,
-                            image: Design.Images.maniac,
-                            isEnabled: viewModel.isAddingRoleEnabled
-                        )
-
-                        MLGCheckbox(
-                            isChecked: $viewModel.game.settings.shouldBeJournalist,
-                            title: Localization.journalistRoleTitle,
-                            image: Design.Images.journalist,
+                            isChecked: $viewModel.game.settings.shouldBeRole[index].isActive,
+                            title: RoleInfoProvider.getName(by: role),
+                            image: RoleInfoProvider.getImage(by: role),
                             isEnabled: viewModel.isAddingRoleEnabled
                         )
                     }

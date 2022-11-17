@@ -24,6 +24,7 @@
 		174ACF982907E5C100ECA362 /* MLGSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF972907E5C100ECA362 /* MLGSection.swift */; };
 		174ACF9A2907F23400ECA362 /* MLGScrollViewIfNeeded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF992907F23400ECA362 /* MLGScrollViewIfNeeded.swift */; };
 		174ACF9C2907F28500ECA362 /* SizeReaderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ACF9B2907F28500ECA362 /* SizeReaderModifier.swift */; };
+		175C302C29211D90008C320F /* RoleInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175C302B29211D90008C320F /* RoleInfoProvider.swift */; };
 		176659A428F8AAF600288E9D /* ApplyColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A328F8AAF600288E9D /* ApplyColorTheme.swift */; };
 		176659A728F8ACB100288E9D /* View+Modificators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A628F8ACB100288E9D /* View+Modificators.swift */; };
 		176659A928F8C24900288E9D /* SetupImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176659A828F8C24900288E9D /* SetupImageSize.swift */; };
@@ -110,6 +111,7 @@
 		174ACF972907E5C100ECA362 /* MLGSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGSection.swift; sourceTree = "<group>"; };
 		174ACF992907F23400ECA362 /* MLGScrollViewIfNeeded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLGScrollViewIfNeeded.swift; sourceTree = "<group>"; };
 		174ACF9B2907F28500ECA362 /* SizeReaderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReaderModifier.swift; sourceTree = "<group>"; };
+		175C302B29211D90008C320F /* RoleInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleInfoProvider.swift; sourceTree = "<group>"; };
 		176659A328F8AAF600288E9D /* ApplyColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyColorTheme.swift; sourceTree = "<group>"; };
 		176659A628F8ACB100288E9D /* View+Modificators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Modificators.swift"; sourceTree = "<group>"; };
 		176659A828F8C24900288E9D /* SetupImageSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupImageSize.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				17115AF528F705B800B061EC /* MafiaGameSettingsProtocol.swift */,
 				17115AF728F705DB00B061EC /* MafiaGameProtocol.swift */,
 				174ACF2128FF504100ECA362 /* GameFactsProvider.swift */,
+				175C302B29211D90008C320F /* RoleInfoProvider.swift */,
 			);
 			path = MafiaGame;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				174ACF2228FF504100ECA362 /* GameFactsProvider.swift in Sources */,
 				17E52FDC28F744C0000D2FB7 /* FullScreen.swift in Sources */,
 				17CCF80528F8030700C8046A /* MLGPreviewComponent.swift in Sources */,
+				175C302C29211D90008C320F /* RoleInfoProvider.swift in Sources */,
 				17115AF428F7059700B061EC /* MafiaPlayerProtocol.swift in Sources */,
 				17D711FB28F863B300C6869C /* MLGStepper.swift in Sources */,
 				174ACF1E28FF457C00ECA362 /* OfflineMafiaPlayersScreen.swift in Sources */,

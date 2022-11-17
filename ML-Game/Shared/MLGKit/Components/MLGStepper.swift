@@ -28,7 +28,7 @@ struct MLGStepper : View {
     var body: some View {
         HStack(spacing: Design.Spacing.short) {
             makeButton(
-                iconName: Design.SystemNames.minus,
+                image: Design.Images.Icons.minus,
                 isActive: canDecrease
             ) {
                     value = value - 1
@@ -48,7 +48,7 @@ struct MLGStepper : View {
                 .padding([.top, .bottom], Design.Spacing.short)
 
             makeButton(
-                iconName: Design.SystemNames.plus,
+                image: Design.Images.Icons.plus,
                 isActive: canIncrease
             ) {
                 value = value + 1
@@ -70,11 +70,11 @@ struct MLGStepper : View {
             range.upperBound
     }
 
-    private func makeButton(iconName: String, isActive: Bool, onTapGesture: @escaping () -> ()) -> some View {
-        Image(systemName: iconName)
+    private func makeButton(image: Image, isActive: Bool, onTapGesture: @escaping () -> ()) -> some View {
+        image
+            .renderingMode(.template)
             .resizable()
             .scaledToFit()
-            .padding(Design.Spacing.short)
             .frame(
                 width: Design.Size.normal,
                 height: Design.Size.normal

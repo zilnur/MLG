@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Подумать над необходимостью такого компонента
 struct MLGUnderlineTabView: View {
     @State var currentTab: Int = 0
     @Namespace var namespace

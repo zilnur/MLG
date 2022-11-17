@@ -18,16 +18,17 @@ struct OfflineMafiaPlayersScreen: View {
             )
             MLGScrollViewIfNeeded {
                 VStack {
-                    ForEach(0..<gameSettings.settings.playersCount) { player in
+                    ForEach(0..<gameSettings.settings.playersCount) { index in
+                        let player = gameSettings.players[index]
                         HStack {
-                            Text("\(gameSettings.players[player].name)")
+                            Text("\(player.name)")
                                 .bold()
                             Spacer()
-                            if gameSettings.players[player].role.isRedRole {
-                                Text("\(gameSettings.players[player].role.description)")
+                            if RoleInfoProvider.isRed(role: player.role) {
+                                Text("\(RoleInfoProvider.getName(by: player.role))")
                                     .foregroundColor(Design.Colors.error)
                             } else {
-                                Text("\(gameSettings.players[player].role.description)")
+                                Text("\(RoleInfoProvider.getName(by: player.role))")
                             }
                             
                         }

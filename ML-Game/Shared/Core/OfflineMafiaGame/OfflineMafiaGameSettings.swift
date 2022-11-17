@@ -1,5 +1,5 @@
 //
-//  OfflineMafiaGameSettings.swift
+//  OfflineMafiaGameSetting4s.swift
 //  ML-Game (iOS)
 //
 //  Created by Dmitry Leukhin on 12.10.2022.
@@ -8,24 +8,25 @@
 import Foundation
 
 class OfflineMafiaGameSettings: Codable {
+    struct ShouldBeRole: Codable {
+        var role: MafiaPlayerRole
+        var isActive: Bool
+    }
+
     var playersCount: Int = 1
     var mafiasCount: Int = 1
 
-    //TODO: - Возможно перенести в словарь?
-    var shouldBeDon: Bool = false
-    var shouldBeManiac: Bool = false
-    var shouldBeDoctor: Bool = false
-    var shouldBeJournalist: Bool = false
-
     var selectedRolesCount: Int {
-        var counter: Int = 0
-
-        counter = shouldBeDon ? counter + 1 : counter
-        counter = shouldBeManiac ? counter + 1 : counter
-        counter = shouldBeDoctor ? counter + 1 : counter
-        counter = shouldBeJournalist ? counter + 1 : counter
-
-        return counter
+        shouldBeRole.reduce(into: 0) { partialResult, role in
+            partialResult = role.isActive ? partialResult + 1 : partialResult
+        }
     }
+
+    var shouldBeRole: [ShouldBeRole] = [
+        ShouldBeRole(role: .don, isActive: false),
+        ShouldBeRole(role: .maniac, isActive: false),
+        ShouldBeRole(role: .doctor, isActive: false),
+        ShouldBeRole(role: .journalist, isActive: false)
+    ]
 }
 

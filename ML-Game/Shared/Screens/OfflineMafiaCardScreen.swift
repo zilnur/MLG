@@ -15,7 +15,11 @@ struct OfflineMafiaCardScreen: View {
             MLGSection(title: Localization.title) {
                 Spacer()
 
-                MLGCardView(role: viewModel.game.getRoleOfCurrentPlayer().description)
+                MLGCardView(
+                    role: RoleInfoProvider.getName(
+                        by: viewModel.game.getRoleOfCurrentPlayer()
+                    )
+                )
                 
                 Spacer()
 

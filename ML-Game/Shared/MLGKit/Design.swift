@@ -98,13 +98,25 @@ enum Design {
     }
 
     enum Images {
-        /// Иконка дона мафии
-        static let donMafia: Image = Image("donMafia")
-        /// Иконка маньяка
-        static let maniac: Image = Image("maniac")
-        /// Иконка доктора
-        static let doctor: Image = Image("doctor")
-        /// Иконка журналиста
-        static let journalist: Image = Image("journalist")
+        enum Icons {
+            /// Икона плюса
+            static let plus: Image = Image("plus")
+            /// Иконка минуса
+            static let minus: Image = Image("minus")
+        }
+
+        enum Roles {
+            /// Иконка дона мафии
+            static let donMafia: Image = Image("donMafia")
+            /// Иконка маньяка
+            static let maniac: Image = Image("maniac")
+            /// Иконка доктора
+            static let doctor: Image = Image("doctor")
+            /// Иконка журналиста
+            static let journalist: Image = Image("journalist")
+        }
+
+        /// Иконка со знаком вопроса
+        static let questionMark: Image = Image("questionMark")
     }
 }
