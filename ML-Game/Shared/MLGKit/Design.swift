@@ -114,6 +114,10 @@ enum Design {
             static let doctor: Image = Image("doctor")
             /// Иконка журналиста
             static let journalist: Image = Image("journalist")
+            /// Иконка проститутки
+            static let whore: Image = Image("whore")
+            /// Иконка якудза
+            static let yakuza: Image = Image("yakuza")
         }
 
         /// Иконка со знаком вопроса

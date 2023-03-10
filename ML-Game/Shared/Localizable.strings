@@ -18,6 +18,9 @@
 "Common.PlayerRole.civilian" = "Мирный";
 "Common.PlayerRole.doctor" = "Доктор";
 "Common.PlayerRole.journalist" = "Журналист";
+"Common.PlayerRole.whore" = "Проститутка";
+"Common.PlayerRole.yakuza" = "Якудза";
+
 "Common.PlayerRole.none" = "Нет роли";
 
 // MARK: - RoleAllocator

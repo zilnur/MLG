@@ -28,6 +28,10 @@ enum RoleInfoProvider {
             return "Common.PlayerRole.journalist".localized
         case .none:
             return "Common.PlayerRole.none".localized
+        case .yakuza:
+            return "Common.PlayerRole.yakuza".localized
+        case .whore:
+            return "Common.PlayerRole.whore".localized
         }
     }
 
@@ -42,6 +46,10 @@ enum RoleInfoProvider {
             return Design.Images.Roles.doctor
         case .journalist:
             return Design.Images.Roles.journalist
+        case .whore:
+            return Design.Images.Roles.whore
+        case .yakuza:
+            return Design.Images.Roles.yakuza
         default:
             return Design.Images.questionMark
         }
@@ -52,7 +60,7 @@ enum RoleInfoProvider {
         switch role {
         case .mafia, .don, .maniac:
             return true
-        case .commissioner, .doctor, .civilian, .journalist:
+        case .commissioner, .doctor, .civilian, .journalist, .yakuza, .whore:
             return false
         case .none:
             return false

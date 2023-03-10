@@ -26,7 +26,9 @@ class OfflineMafiaGameSettings: Codable {
         ShouldBeRole(role: .don, isActive: false),
         ShouldBeRole(role: .maniac, isActive: false),
         ShouldBeRole(role: .doctor, isActive: false),
-        ShouldBeRole(role: .journalist, isActive: false)
+        ShouldBeRole(role: .journalist, isActive: false),
+        ShouldBeRole(role: .whore, isActive: false),
+        ShouldBeRole(role: .yakuza, isActive: false)
     ]
 }
 

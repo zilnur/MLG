@@ -13,11 +13,13 @@ enum MafiaPlayerRole: Codable {
     case mafia
     case don
     case maniac
+    case yakuza
     // Red roles
     case commissioner
     case doctor
     case civilian
     case journalist
+    case whore
     // Отсутствие роли
     case none
 }
