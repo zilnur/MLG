@@ -5,7 +5,6 @@
 //  Created by Dmitry Leukhin on 13.10.2022.
 //
 
-import Foundation
 import UIKit
 
 extension Optional where Wrapped : UIImage {

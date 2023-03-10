@@ -27,60 +27,37 @@ enum RoleAllocator {
     ///   - settings: Настройки, на основании которых будут распределятся роли
     static func assign(for players: [OfflineMafiaPlayer], by settings: OfflineMafiaGameSettings) {
         guard settings.playersCount > 1 && settings.playersCount > settings.mafiasCount else { return }
+
+        let shouldBeDon: Bool = settings.shouldBeRole.first { $0.role == .don }?.isActive ?? false
+        let mafiasCount = shouldBeDon ? settings.mafiasCount - 1 : settings.mafiasCount
+
         var freeRolesIndexes: [Int] = Array(0..<settings.playersCount)
 
-        var mafiaRolesIndexes: [Int] = []
-        let commissionerIndex: Int
-        let doctorIndex: Int
-        let donIndex: Int
-        let maniacIndex: Int
-        let journalistIndex: Int
+        // Assign commissioner role
+        allocate(role: .commissioner, for: &freeRolesIndexes, with: players)
 
-        var randomIndex: Int
-
-        var mafiasLeft = settings.shouldBeDon ? settings.mafiasCount - 1 : settings.mafiasCount
-
-        while mafiasLeft > 0 {
-            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-            mafiaRolesIndexes.append(freeRolesIndexes.remove(at: randomIndex))
-            mafiasLeft = mafiasLeft - 1
+        // Assign mafia roles
+        for _ in 0..<mafiasCount {
+            allocate(role: .mafia, for: &freeRolesIndexes, with: players)
         }
 
-        randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-        commissionerIndex = freeRolesIndexes.remove(at: randomIndex)
-        players[commissionerIndex].role = MafiaPlayerRole.commissioner
-
-        mafiaRolesIndexes.forEach { index in
-            players[index].role = MafiaPlayerRole.mafia
+        // Assign additional roles
+        settings.shouldBeRole.forEach {
+            if $0.isActive {
+                allocate(role: $0.role, for: &freeRolesIndexes, with: players)
+            }
         }
 
-        if settings.shouldBeDoctor && freeRolesIndexes.count > 0 {
-            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-            doctorIndex = freeRolesIndexes.remove(at: randomIndex)
-            players[doctorIndex].role = MafiaPlayerRole.doctor
-        }
-        
-        if settings.shouldBeDon && freeRolesIndexes.count > 0 {
-            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-            donIndex = freeRolesIndexes.remove(at: randomIndex)
-            players[donIndex].role = MafiaPlayerRole.don
-        }
-
-        if settings.shouldBeManiac && freeRolesIndexes.count > 0 {
-            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-            maniacIndex = freeRolesIndexes.remove(at: randomIndex)
-            players[maniacIndex].role = MafiaPlayerRole.maniac
-        }
-
-        if settings.shouldBeJournalist && freeRolesIndexes.count > 0 {
-            randomIndex = Int.random(in: 0..<freeRolesIndexes.count)
-            journalistIndex = freeRolesIndexes.remove(at: randomIndex)
-            players[journalistIndex].role = MafiaPlayerRole.journalist
-        }
-
+        // Assign left civilian roles
         freeRolesIndexes.forEach { index in
             players[index].role = MafiaPlayerRole.civilian
         }
+    }
+
+    /// Метод, выделяющий роль игроку из массивов допустимых индексов
+    private static func allocate(role: MafiaPlayerRole, for freeRolesIndexes: inout [Int], with players: [OfflineMafiaPlayer]) {
+        let index = Int.random(in: 0..<freeRolesIndexes.count)
+        players[freeRolesIndexes.remove(at: index)].role = role
     }
 
     static func validate(gameSettings: OfflineMafiaGameSettings) -> String {
