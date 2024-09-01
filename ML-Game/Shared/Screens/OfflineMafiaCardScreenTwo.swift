@@ -58,7 +58,7 @@ struct OfflineMafiaCardScreenTwo: View {
                                 Localization.goToLeader
                             )
                             .lineLimit(1)
-                            .modifier(ButtonViewModifier())
+                            .modifier(ButtonViewModifier(isNextScreen:  selection < viewModel.game.players.count - 1))
                         }
                 }
             }
@@ -116,13 +116,14 @@ extension OfflineMafiaCardScreenTwo {
 }
 
 private struct ButtonViewModifier: ViewModifier {
+    var isNextScreen: Bool = true
     func body(content: Content) -> some View {
         content
             .padding(Design.Spacing.standart)
             .frame(maxWidth: .infinity)
             .font(Design.Fonts.h3)
             .foregroundColor(Design.Colors.secondary)
-            .background(Design.Colors.primary)
+            .background(isNextScreen ? Design.Colors.primary : Color.green)
             .clipShape(RoundedRectangle(cornerRadius: 16))
     }
 }
